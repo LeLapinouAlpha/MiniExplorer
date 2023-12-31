@@ -23,6 +23,13 @@ namespace MiniExplorer.Controls
 
         /*
          * **************************************************************************************
+         * *                                  EVENTS HANDLER                                    *
+         * **************************************************************************************
+         */
+        public event EventHandler DirectoryChanged;
+
+        /*
+         * **************************************************************************************
          * *                                    CONSTRUCTORS                                    *
          * **************************************************************************************
         */
@@ -45,6 +52,7 @@ namespace MiniExplorer.Controls
                 dirPath = path;
                 dirInfo = new DirectoryInfo(path);
                 Display();
+                DirectoryChanged?.Invoke(this, EventArgs.Empty);
             }
         }
 
@@ -78,7 +86,7 @@ namespace MiniExplorer.Controls
                     item.SubItems.Add(Utils.File.FileSizeToString(info.Length)); // Size
                     view.Items.Add(item);
                 }
-            } 
+            }
             catch (UnauthorizedAccessException uaEx)
             {
                 MessageBox.Show(uaEx.Message, "Unauthorized access", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -96,7 +104,7 @@ namespace MiniExplorer.Controls
 
         /*
          * **************************************************************************************
-         * *                                EVENTS HANDLER                                      *
+         * *                                       EVENTS                                       *
          * **************************************************************************************
          */
         private void listView_MouseDoubleClick(object sender, MouseEventArgs e)
