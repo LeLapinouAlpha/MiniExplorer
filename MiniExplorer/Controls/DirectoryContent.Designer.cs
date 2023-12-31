@@ -32,19 +32,21 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DirectoryContent));
             view = new ListView();
             nameColumn = new ColumnHeader();
+            sizeColumn = new ColumnHeader();
             largeImageList = new ImageList(components);
             smallImageList = new ImageList(components);
+            typeColumn = new ColumnHeader();
             SuspendLayout();
             // 
             // view
             // 
-            view.Columns.AddRange(new ColumnHeader[] { nameColumn });
+            view.Columns.AddRange(new ColumnHeader[] { nameColumn, typeColumn, sizeColumn });
             view.Dock = DockStyle.Fill;
             view.FullRowSelect = true;
             view.LargeImageList = largeImageList;
             view.Location = new Point(0, 0);
             view.Name = "view";
-            view.Size = new Size(362, 208);
+            view.Size = new Size(646, 208);
             view.SmallImageList = smallImageList;
             view.TabIndex = 0;
             view.UseCompatibleStateImageBehavior = false;
@@ -55,6 +57,12 @@
             // 
             nameColumn.Text = "Name";
             nameColumn.Width = 256;
+            // 
+            // sizeColumn
+            // 
+            sizeColumn.DisplayIndex = 1;
+            sizeColumn.Text = "Size";
+            sizeColumn.Width = 128;
             // 
             // largeImageList
             // 
@@ -72,13 +80,19 @@
             smallImageList.Images.SetKeyName(0, "icons8-dossier-windows-11-color-70.png");
             smallImageList.Images.SetKeyName(1, "icons8-fichier-windows-11-color-70.png");
             // 
+            // typeColumn
+            // 
+            typeColumn.DisplayIndex = 2;
+            typeColumn.Text = "Type";
+            typeColumn.Width = 128;
+            // 
             // DirectoryContent
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(view);
             Name = "DirectoryContent";
-            Size = new Size(362, 208);
+            Size = new Size(646, 208);
             ResumeLayout(false);
         }
 
@@ -88,5 +102,7 @@
         private ColumnHeader nameColumn;
         private ImageList largeImageList;
         private ImageList smallImageList;
+        private ColumnHeader sizeColumn;
+        private ColumnHeader typeColumn;
     }
 }

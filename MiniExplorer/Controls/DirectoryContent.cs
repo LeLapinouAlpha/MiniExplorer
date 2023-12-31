@@ -66,12 +66,16 @@ namespace MiniExplorer.Controls
                 foreach (var info in dirInfo.GetDirectories())
                 {
                     var item = new ListViewItem(info.Name, 0);
+                    item.SubItems.Add("Directory"); // Type
+                    item.SubItems.Add("-"); // Size
                     view.Items.Add(item);
                 }
 
                 foreach (var info in dirInfo.GetFiles())
                 {
                     var item = new ListViewItem(info.Name, 1);
+                    item.SubItems.Add(Utils.File.GetFileType(info.Extension)); // Type
+                    item.SubItems.Add(Utils.File.FileSizeToString(info.Length)); // Size
                     view.Items.Add(item);
                 }
             } 
