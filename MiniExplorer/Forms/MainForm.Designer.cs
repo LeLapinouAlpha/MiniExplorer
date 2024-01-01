@@ -29,31 +29,25 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            directoryContent = new Controls.DirectoryContent();
             statusBar = new Controls.StatusBar();
             menuBar = new Controls.MenuBar();
+            splitContainer = new SplitContainer();
+            directoryTree = new Controls.DirectoryTree();
+            directoryContent1 = new Controls.DirectoryContent();
+            ((System.ComponentModel.ISupportInitialize)splitContainer).BeginInit();
+            splitContainer.Panel1.SuspendLayout();
+            splitContainer.Panel2.SuspendLayout();
+            splitContainer.SuspendLayout();
             SuspendLayout();
-            // 
-            // directoryContent
-            // 
-            directoryContent.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            directoryContent.DirPath = "C:\\";
-            directoryContent.Location = new Point(129, 28);
-            directoryContent.Name = "directoryContent";
-            directoryContent.Size = new Size(671, 393);
-            directoryContent.TabIndex = 0;
-            directoryContent.DirectoryChanged += directoryContent_DirectoryChanged;
-            directoryContent.FileSelectionChanged += directoryContent_FileSelectionChanged;
-            directoryContent.Load += directoryContent_Load;
             // 
             // statusBar
             // 
             statusBar.Dock = DockStyle.Bottom;
             statusBar.ElementCount = 0;
-            statusBar.Location = new Point(0, 419);
+            statusBar.Location = new Point(0, 462);
             statusBar.Name = "statusBar";
             statusBar.SelectedElementCount = 0;
-            statusBar.Size = new Size(800, 31);
+            statusBar.Size = new Size(883, 31);
             statusBar.TabIndex = 1;
             // 
             // menuBar
@@ -61,27 +55,67 @@
             menuBar.Dock = DockStyle.Top;
             menuBar.Location = new Point(0, 0);
             menuBar.Name = "menuBar";
-            menuBar.Size = new Size(800, 28);
+            menuBar.Size = new Size(883, 28);
             menuBar.TabIndex = 2;
+            // 
+            // splitContainer
+            // 
+            splitContainer.Dock = DockStyle.Fill;
+            splitContainer.Location = new Point(0, 28);
+            splitContainer.Name = "splitContainer";
+            // 
+            // splitContainer.Panel1
+            // 
+            splitContainer.Panel1.Controls.Add(directoryTree);
+            // 
+            // splitContainer.Panel2
+            // 
+            splitContainer.Panel2.Controls.Add(directoryContent1);
+            splitContainer.Size = new Size(883, 434);
+            splitContainer.SplitterDistance = 209;
+            splitContainer.TabIndex = 3;
+            // 
+            // directoryTree
+            // 
+            directoryTree.Dock = DockStyle.Fill;
+            directoryTree.Location = new Point(0, 0);
+            directoryTree.Name = "directoryTree";
+            directoryTree.RootDirPath = "C:\\";
+            directoryTree.Size = new Size(209, 434);
+            directoryTree.TabIndex = 0;
+            // 
+            // directoryContent1
+            // 
+            directoryContent1.DirPath = null;
+            directoryContent1.Dock = DockStyle.Fill;
+            directoryContent1.Location = new Point(0, 0);
+            directoryContent1.Name = "directoryContent1";
+            directoryContent1.Size = new Size(670, 434);
+            directoryContent1.TabIndex = 0;
             // 
             // MainForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(883, 493);
+            Controls.Add(splitContainer);
             Controls.Add(menuBar);
             Controls.Add(statusBar);
-            Controls.Add(directoryContent);
             Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "MainForm";
             Text = "MiniExplorer";
+            splitContainer.Panel1.ResumeLayout(false);
+            splitContainer.Panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)splitContainer).EndInit();
+            splitContainer.ResumeLayout(false);
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Controls.DirectoryContent directoryContent;
         private Controls.StatusBar statusBar;
         private Controls.MenuBar menuBar;
+        private SplitContainer splitContainer;
+        private Controls.DirectoryTree directoryTree;
+        private Controls.DirectoryContent directoryContent1;
     }
 }

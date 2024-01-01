@@ -116,7 +116,7 @@ namespace MiniExplorer.Controls
                 if (Directory.Exists(path))
                     DirPath = path;
                 else if (File.Exists(path))
-                    MessageBox.Show("Open file is not handle yet.", "Not implemented", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    throw new NotImplementedException();
             }
         }
 

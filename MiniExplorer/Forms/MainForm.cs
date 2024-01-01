@@ -47,8 +47,7 @@ namespace MiniExplorer.Forms
         */
         private void SyncStatusBar()
         {
-            this.statusBar.ElementCount = this.directoryContent.ElementCount - 1;
-            this.statusBar.SelectedElementCount = this.directoryContent.SelectedElementCount;
+
         }
 
         /*
@@ -56,19 +55,5 @@ namespace MiniExplorer.Forms
          * *                                       EVENTS                                       *
          * **************************************************************************************
          */
-        private void directoryContent_DirectoryChanged(object sender, EventArgs e)
-        {
-            SyncStatusBar();
-        }
-
-        private void directoryContent_Load(object sender, EventArgs e)
-        {
-            SyncStatusBar();
-        }
-
-        private void directoryContent_FileSelectionChanged(object sender, EventArgs e)
-        {
-            SyncStatusBar();
-        }
     }
 }
