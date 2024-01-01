@@ -32,15 +32,16 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DirectoryContent));
             view = new ListView();
             nameColumn = new ColumnHeader();
+            typeColumn = new ColumnHeader();
             sizeColumn = new ColumnHeader();
+            updatedAtColumn = new ColumnHeader();
             largeImageList = new ImageList(components);
             smallImageList = new ImageList(components);
-            typeColumn = new ColumnHeader();
             SuspendLayout();
             // 
             // view
             // 
-            view.Columns.AddRange(new ColumnHeader[] { nameColumn, typeColumn, sizeColumn });
+            view.Columns.AddRange(new ColumnHeader[] { nameColumn, typeColumn, sizeColumn, updatedAtColumn });
             view.Dock = DockStyle.Fill;
             view.FullRowSelect = true;
             view.LargeImageList = largeImageList;
@@ -51,6 +52,7 @@
             view.TabIndex = 0;
             view.UseCompatibleStateImageBehavior = false;
             view.View = View.Details;
+            view.SelectedIndexChanged += view_SelectedIndexChanged;
             view.MouseDoubleClick += listView_MouseDoubleClick;
             // 
             // nameColumn
@@ -58,11 +60,22 @@
             nameColumn.Text = "Name";
             nameColumn.Width = 256;
             // 
+            // typeColumn
+            // 
+            typeColumn.DisplayIndex = 2;
+            typeColumn.Text = "Type";
+            typeColumn.Width = 128;
+            // 
             // sizeColumn
             // 
             sizeColumn.DisplayIndex = 1;
             sizeColumn.Text = "Size";
             sizeColumn.Width = 128;
+            // 
+            // updatedAtColumn
+            // 
+            updatedAtColumn.Text = "Updated At";
+            updatedAtColumn.Width = 128;
             // 
             // largeImageList
             // 
@@ -79,12 +92,6 @@
             smallImageList.TransparentColor = Color.Transparent;
             smallImageList.Images.SetKeyName(0, "icons8-dossier-windows-11-color-70.png");
             smallImageList.Images.SetKeyName(1, "icons8-fichier-windows-11-color-70.png");
-            // 
-            // typeColumn
-            // 
-            typeColumn.DisplayIndex = 2;
-            typeColumn.Text = "Type";
-            typeColumn.Width = 128;
             // 
             // DirectoryContent
             // 
@@ -104,5 +111,6 @@
         private ImageList smallImageList;
         private ColumnHeader sizeColumn;
         private ColumnHeader typeColumn;
+        private ColumnHeader updatedAtColumn;
     }
 }

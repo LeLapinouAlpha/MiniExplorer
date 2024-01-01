@@ -27,6 +27,7 @@ namespace MiniExplorer.Controls
          * **************************************************************************************
          */
         public event EventHandler DirectoryChanged;
+        public event EventHandler FileSelectionChanged;
 
         /*
          * **************************************************************************************
@@ -59,33 +60,32 @@ namespace MiniExplorer.Controls
         public int ElementCount { get => this.view.Items.Count; }
         public int SelectedElementCount { get => this.view.SelectedItems.Count; }
 
+
         /*
          * **************************************************************************************
          * *                                       METHODS                                      *
          * **************************************************************************************
         */
+        private void AddRow(string name, int imageIndex, params string[] columns)
+        {
+            var item = new ListViewItem(name, imageIndex);
+            foreach (string column in columns)
+                item.SubItems.Add(column);
+            this.view.Items.Add(item);
+        }
+
         private void Display()
         {
-            view.Items.Clear();
-            view.Items.Add(new ListViewItem("..", 0));
+            this.view.Items.Clear();
+            this.view.Items.Add(new ListViewItem("..", 0));
 
             try
             {
                 foreach (var info in dirInfo.GetDirectories())
-                {
-                    var item = new ListViewItem(info.Name, 0);
-                    item.SubItems.Add("Directory"); // Type
-                    item.SubItems.Add("-"); // Size
-                    view.Items.Add(item);
-                }
+                    AddRow(info.Name, 0, "-", "Directory", info.LastWriteTime.ToString());
 
                 foreach (var info in dirInfo.GetFiles())
-                {
-                    var item = new ListViewItem(info.Name, 1);
-                    item.SubItems.Add(Utils.File.GetFileType(info.Extension)); // Type
-                    item.SubItems.Add(Utils.File.FileSizeToString(info.Length)); // Size
-                    view.Items.Add(item);
-                }
+                    AddRow(info.Name, 1, Utils.File.FileSizeToString(info.Length), Utils.File.GetFileType(info.Extension), info.LastWriteTime.ToString());
             }
             catch (UnauthorizedAccessException uaEx)
             {
@@ -118,6 +118,11 @@ namespace MiniExplorer.Controls
                 else if (File.Exists(path))
                     MessageBox.Show("Open file is not handle yet.", "Not implemented", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void view_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            FileSelectionChanged?.Invoke(sender, e);
         }
     }
 }

@@ -36,7 +36,7 @@ namespace MiniExplorer.Forms
 
         /*
          * **************************************************************************************
-         * *                                    PROPERTIES                                      *
+         * *                                      PROPERTIES                                    *
          * **************************************************************************************
         */
 
@@ -45,10 +45,10 @@ namespace MiniExplorer.Forms
          * *                                       METHODS                                      *
          * **************************************************************************************
         */
-        private void SyncElementCount()
+        private void SyncStatusBar()
         {
             this.statusBar.ElementCount = this.directoryContent.ElementCount - 1;
-
+            this.statusBar.SelectedElementCount = this.directoryContent.SelectedElementCount;
         }
 
         /*
@@ -58,12 +58,17 @@ namespace MiniExplorer.Forms
          */
         private void directoryContent_DirectoryChanged(object sender, EventArgs e)
         {
-            SyncElementCount();
+            SyncStatusBar();
         }
 
         private void directoryContent_Load(object sender, EventArgs e)
         {
-            SyncElementCount();
+            SyncStatusBar();
+        }
+
+        private void directoryContent_FileSelectionChanged(object sender, EventArgs e)
+        {
+            SyncStatusBar();
         }
     }
 }

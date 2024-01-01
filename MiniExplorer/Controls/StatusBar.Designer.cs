@@ -30,13 +30,14 @@
         {
             statusStrip = new StatusStrip();
             elementCountLabel = new ToolStripStatusLabel();
+            selectedElementCountLabel = new ToolStripStatusLabel();
             statusStrip.SuspendLayout();
             SuspendLayout();
             // 
             // statusStrip
             // 
             statusStrip.Dock = DockStyle.Fill;
-            statusStrip.Items.AddRange(new ToolStripItem[] { elementCountLabel });
+            statusStrip.Items.AddRange(new ToolStripItem[] { elementCountLabel, selectedElementCountLabel });
             statusStrip.Location = new Point(0, 0);
             statusStrip.Name = "statusStrip";
             statusStrip.Size = new Size(420, 31);
@@ -48,6 +49,11 @@
             elementCountLabel.Name = "elementCountLabel";
             elementCountLabel.Size = new Size(72, 26);
             elementCountLabel.Text = "0 element(s)";
+            // 
+            // selectedElementCountLabel
+            // 
+            selectedElementCountLabel.Name = "selectedElementCountLabel";
+            selectedElementCountLabel.Size = new Size(0, 26);
             // 
             // StatusBar
             // 
@@ -66,5 +72,6 @@
 
         private StatusStrip statusStrip;
         private ToolStripStatusLabel elementCountLabel;
+        private ToolStripStatusLabel selectedElementCountLabel;
     }
 }

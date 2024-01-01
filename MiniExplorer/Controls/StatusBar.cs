@@ -18,6 +18,7 @@ namespace MiniExplorer.Controls
          * **************************************************************************************
          */
         int elementCount;
+        int selectedElementCount;
 
 
         /*
@@ -42,6 +43,16 @@ namespace MiniExplorer.Controls
             {
                 elementCount = value;
                 this.elementCountLabel.Text = $"{value} element(s)";
+            }
+        }
+
+        public int SelectedElementCount
+        {
+            get => selectedElementCount;
+            set
+            {
+                selectedElementCount = value;
+                this.selectedElementCountLabel.Text = value > 0 ? $"{value} selected element(s)" : "";
             }
         }
     }
