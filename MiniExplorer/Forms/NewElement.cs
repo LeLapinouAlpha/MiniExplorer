@@ -8,98 +8,52 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace MiniExplorer.Controls
+namespace MiniExplorer.Forms
 {
-    public partial class DirectoryTree : UserControl
+    public partial class NewElement : Form
     {
         /*
          * **************************************************************************************
          * *                                 INSTANCE VARIABLES                                 *
          * **************************************************************************************
          */
-        private string rootDirPath;
-        private DirectoryInfo rootDirInfo;
 
         /*
          * **************************************************************************************
          * *                                  EVENTS HANDLER                                    *
          * **************************************************************************************
          */
-        public event EventHandler SelectionChanged;
 
         /*
          * **************************************************************************************
          * *                                    CONSTRUCTORS                                    *
          * **************************************************************************************
         */
-        public DirectoryTree()
+        public NewElement()
         {
             InitializeComponent();
-            rootDirPath = Environment.GetLogicalDrives()[0];
-            rootDirInfo = new DirectoryInfo(rootDirPath);
         }
 
         /*
          * **************************************************************************************
-         * *                                    PROPERTIES                                      *
+         * *                                      PROPERTIES                                    *
          * **************************************************************************************
         */
-        public string RootDirPath
+        public string ElementName
         {
-            get => rootDirPath;
-            set
-            {
-                string path = value == "" ? Environment.GetLogicalDrives()[0] : value;
-                rootDirPath = path;
-                rootDirInfo = new DirectoryInfo(path);
-                var root = InitDirectoryNode(rootDirInfo);
-                this.view.Nodes.Clear();
-                this.view.Nodes.Add(root);
-            }
+            get => this.elementNameTextBox.Text;
         }
-
 
         /*
          * **************************************************************************************
          * *                                       METHODS                                      *
          * **************************************************************************************
         */
-        private TreeNode InitDirectoryNode(DirectoryInfo dirInfo)
-        {
-            var node = new TreeNode(dirInfo.Name) { ImageIndex = 0, Tag = dirInfo };
-            node.Nodes.Add("...");
-            return node;
-        }
-
-        private void BuildDirectoryTree(TreeNode node)
-        {
-            node.Nodes.Clear();
-            try
-            {
-                var dirInfo = (DirectoryInfo)node.Tag;
-                foreach (var info in dirInfo.GetDirectories())
-                    node.Nodes.Add(InitDirectoryNode(info));
-            }
-            catch (Exception)
-            {
-
-            }
-        }
 
         /*
          * **************************************************************************************
          * *                                       EVENTS                                       *
          * **************************************************************************************
          */
-        private void view_BeforeExpand(object sender, TreeViewCancelEventArgs e)
-        {
-            if (e.Node != null)
-                BuildDirectoryTree(e.Node);
-        }
-
-        private void view_BeforeSelect(object sender, TreeViewCancelEventArgs e)
-        {
-            SelectionChanged?.Invoke(sender, e);
-        }
     }
 }

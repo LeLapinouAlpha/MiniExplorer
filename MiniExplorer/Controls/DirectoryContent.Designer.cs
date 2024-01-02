@@ -35,8 +35,8 @@
             typeColumn = new ColumnHeader();
             sizeColumn = new ColumnHeader();
             updatedAtColumn = new ColumnHeader();
-            largeImageList = new ImageList(components);
-            smallImageList = new ImageList(components);
+            largeIcons = new ImageList(components);
+            smallIcons = new ImageList(components);
             SuspendLayout();
             // 
             // view
@@ -44,54 +44,64 @@
             view.Columns.AddRange(new ColumnHeader[] { nameColumn, typeColumn, sizeColumn, updatedAtColumn });
             view.Dock = DockStyle.Fill;
             view.FullRowSelect = true;
-            view.LargeImageList = largeImageList;
+            view.LargeImageList = largeIcons;
             view.Location = new Point(0, 0);
             view.Name = "view";
-            view.Size = new Size(646, 208);
-            view.SmallImageList = smallImageList;
+            view.Size = new Size(831, 208);
+            view.SmallImageList = smallIcons;
+            view.StateImageList = smallIcons;
             view.TabIndex = 0;
             view.UseCompatibleStateImageBehavior = false;
             view.View = View.Details;
             view.SelectedIndexChanged += view_SelectedIndexChanged;
-            view.MouseDoubleClick += listView_MouseDoubleClick;
+            view.KeyDown += view_KeyDown;
+            view.MouseDoubleClick += view_MouseDoubleClick;
             // 
             // nameColumn
             // 
-            nameColumn.Text = "Name";
+            nameColumn.Text = "Nom";
             nameColumn.Width = 256;
             // 
             // typeColumn
             // 
-            typeColumn.DisplayIndex = 2;
             typeColumn.Text = "Type";
-            typeColumn.Width = 128;
+            typeColumn.Width = 256;
             // 
             // sizeColumn
             // 
-            sizeColumn.DisplayIndex = 1;
-            sizeColumn.Text = "Size";
+            sizeColumn.Text = "Taille";
             sizeColumn.Width = 128;
             // 
             // updatedAtColumn
             // 
-            updatedAtColumn.Text = "Updated At";
+            updatedAtColumn.Text = "Modifié le";
             updatedAtColumn.Width = 128;
             // 
-            // largeImageList
+            // largeIcons
             // 
-            largeImageList.ColorDepth = ColorDepth.Depth32Bit;
-            largeImageList.ImageStream = (ImageListStreamer)resources.GetObject("largeImageList.ImageStream");
-            largeImageList.TransparentColor = Color.Transparent;
-            largeImageList.Images.SetKeyName(0, "icons8-dossier-windows-11-color-310.png");
-            largeImageList.Images.SetKeyName(1, "icons8-fichier-windows-11-color-310.png");
+            largeIcons.ColorDepth = ColorDepth.Depth32Bit;
+            largeIcons.ImageStream = (ImageListStreamer)resources.GetObject("largeIcons.ImageStream");
+            largeIcons.TransparentColor = Color.Transparent;
+            largeIcons.Images.SetKeyName(0, "icons8-dossier-480.png");
+            largeIcons.Images.SetKeyName(1, "icons8-fichier-480.png");
+            largeIcons.Images.SetKeyName(2, "icons8-document-480.png");
+            largeIcons.Images.SetKeyName(3, "icons8-adobe-acrobat-480.png");
+            largeIcons.Images.SetKeyName(4, "icons8-microsoft-word-2019-480.png");
+            largeIcons.Images.SetKeyName(5, "icons8-microsoft-excel-2019-480.png");
+            largeIcons.Images.SetKeyName(6, "icons8-microsoft-powerpoint-2019-480.png");
             // 
-            // smallImageList
+            // smallIcons
             // 
-            smallImageList.ColorDepth = ColorDepth.Depth32Bit;
-            smallImageList.ImageStream = (ImageListStreamer)resources.GetObject("smallImageList.ImageStream");
-            smallImageList.TransparentColor = Color.Transparent;
-            smallImageList.Images.SetKeyName(0, "icons8-dossier-windows-11-color-70.png");
-            smallImageList.Images.SetKeyName(1, "icons8-fichier-windows-11-color-70.png");
+            smallIcons.ColorDepth = ColorDepth.Depth32Bit;
+            smallIcons.ImageStream = (ImageListStreamer)resources.GetObject("smallIcons.ImageStream");
+            smallIcons.TransparentColor = Color.Transparent;
+            smallIcons.Images.SetKeyName(0, "icons8-dossier-480.png");
+            smallIcons.Images.SetKeyName(1, "icons8-fichier-480.png");
+            smallIcons.Images.SetKeyName(2, "icons8-document-480.png");
+            smallIcons.Images.SetKeyName(3, "icons8-adobe-acrobat-480.png");
+            smallIcons.Images.SetKeyName(4, "icons8-microsoft-word-2019-480.png");
+            smallIcons.Images.SetKeyName(5, "icons8-microsoft-excel-2019-480.png");
+            smallIcons.Images.SetKeyName(6, "icons8-microsoft-powerpoint-2019-480.png");
             // 
             // DirectoryContent
             // 
@@ -99,7 +109,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(view);
             Name = "DirectoryContent";
-            Size = new Size(646, 208);
+            Size = new Size(831, 208);
             ResumeLayout(false);
         }
 
@@ -107,10 +117,10 @@
 
         private ListView view;
         private ColumnHeader nameColumn;
-        private ImageList largeImageList;
-        private ImageList smallImageList;
+        private ImageList smallIcons;
         private ColumnHeader sizeColumn;
         private ColumnHeader typeColumn;
         private ColumnHeader updatedAtColumn;
+        private ImageList largeIcons;
     }
 }

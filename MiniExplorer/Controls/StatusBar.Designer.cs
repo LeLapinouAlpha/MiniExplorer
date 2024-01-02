@@ -47,8 +47,7 @@
             // elementCountLabel
             // 
             elementCountLabel.Name = "elementCountLabel";
-            elementCountLabel.Size = new Size(72, 26);
-            elementCountLabel.Text = "0 element(s)";
+            elementCountLabel.Size = new Size(0, 26);
             // 
             // selectedElementCountLabel
             // 

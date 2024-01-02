@@ -6,11 +6,11 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
-    <ApplicationIcon>Icons\icons8-explorateur-de-fichiers-nouveau-70.ico</ApplicationIcon>
+    <ApplicationIcon>Icons\icons8-explorateur-de-fichiers-nouveau-100.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="Icons\icons8-explorateur-de-fichiers-nouveau-70.ico" />
+    <Content Include="Icons\icons8-explorateur-de-fichiers-nouveau-100.ico" />
   </ItemGroup>
 
   <ItemGroup>

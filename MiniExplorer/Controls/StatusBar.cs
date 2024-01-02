@@ -14,7 +14,7 @@ namespace MiniExplorer.Controls
     {
         /*
          * **************************************************************************************
-         * *                                 INSTANCE VARIABLES                                 *
+         * *                                 INSTANCE VAR IABLES                                 *
          * **************************************************************************************
          */
         int elementCount;
@@ -29,6 +29,7 @@ namespace MiniExplorer.Controls
         public StatusBar()
         {
             InitializeComponent();
+            ElementCount = 0;
         }
 
         /*
@@ -42,7 +43,7 @@ namespace MiniExplorer.Controls
             set
             {
                 elementCount = value;
-                this.elementCountLabel.Text = $"{value} element(s)";
+                this.elementCountLabel.Text = $"{value} élément(s)";
             }
         }
 
@@ -52,7 +53,7 @@ namespace MiniExplorer.Controls
             set
             {
                 selectedElementCount = value;
-                this.selectedElementCountLabel.Text = value > 0 ? $"{value} selected element(s)" : "";
+                this.selectedElementCountLabel.Text = value > 0 ? $"{value} élément(s) séléctionné(s)" : "";
             }
         }
     }

@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             statusBar = new Controls.StatusBar();
             menuBar = new Controls.MenuBar();
-            splitContainer = new SplitContainer();
+            directoryContent = new Controls.DirectoryContent();
             directoryTree = new Controls.DirectoryTree();
-            directoryContent1 = new Controls.DirectoryContent();
+            splitContainer = new SplitContainer();
             ((System.ComponentModel.ISupportInitialize)splitContainer).BeginInit();
             splitContainer.Panel1.SuspendLayout();
             splitContainer.Panel2.SuspendLayout();
@@ -52,11 +52,36 @@
             // 
             // menuBar
             // 
+            menuBar.DirectoryContent = directoryContent;
+            menuBar.DirectoryTree = directoryTree;
             menuBar.Dock = DockStyle.Top;
             menuBar.Location = new Point(0, 0);
             menuBar.Name = "menuBar";
             menuBar.Size = new Size(883, 28);
             menuBar.TabIndex = 2;
+            // 
+            // directoryContent
+            // 
+            directoryContent.DirPath = "C:\\";
+            directoryContent.Dock = DockStyle.Fill;
+            directoryContent.Location = new Point(0, 0);
+            directoryContent.Name = "directoryContent";
+            directoryContent.Size = new Size(670, 434);
+            directoryContent.TabIndex = 0;
+            directoryContent.View = View.Details;
+            directoryContent.DirectoryChanged += directoryContent_DirectoryChanged;
+            directoryContent.SelectionChanged += directoryContent_FileSelectionChanged;
+            directoryContent.Load += directoryContent_Load;
+            // 
+            // directoryTree
+            // 
+            directoryTree.Dock = DockStyle.Fill;
+            directoryTree.Location = new Point(0, 0);
+            directoryTree.Name = "directoryTree";
+            directoryTree.RootDirPath = "C:\\";
+            directoryTree.Size = new Size(209, 434);
+            directoryTree.TabIndex = 0;
+            directoryTree.SelectionChanged += directoryTree_SelectionChanged;
             // 
             // splitContainer
             // 
@@ -70,28 +95,10 @@
             // 
             // splitContainer.Panel2
             // 
-            splitContainer.Panel2.Controls.Add(directoryContent1);
+            splitContainer.Panel2.Controls.Add(directoryContent);
             splitContainer.Size = new Size(883, 434);
             splitContainer.SplitterDistance = 209;
             splitContainer.TabIndex = 3;
-            // 
-            // directoryTree
-            // 
-            directoryTree.Dock = DockStyle.Fill;
-            directoryTree.Location = new Point(0, 0);
-            directoryTree.Name = "directoryTree";
-            directoryTree.RootDirPath = "C:\\";
-            directoryTree.Size = new Size(209, 434);
-            directoryTree.TabIndex = 0;
-            // 
-            // directoryContent1
-            // 
-            directoryContent1.DirPath = null;
-            directoryContent1.Dock = DockStyle.Fill;
-            directoryContent1.Location = new Point(0, 0);
-            directoryContent1.Name = "directoryContent1";
-            directoryContent1.Size = new Size(670, 434);
-            directoryContent1.TabIndex = 0;
             // 
             // MainForm
             // 
@@ -116,6 +123,6 @@
         private Controls.MenuBar menuBar;
         private SplitContainer splitContainer;
         private Controls.DirectoryTree directoryTree;
-        private Controls.DirectoryContent directoryContent1;
+        private Controls.DirectoryContent directoryContent;
     }
 }

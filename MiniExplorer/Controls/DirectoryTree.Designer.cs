@@ -46,13 +46,14 @@
             view.Size = new Size(243, 350);
             view.TabIndex = 0;
             view.BeforeExpand += view_BeforeExpand;
+            view.BeforeSelect += view_BeforeSelect;
             // 
             // imageList
             // 
             imageList.ColorDepth = ColorDepth.Depth32Bit;
             imageList.ImageStream = (ImageListStreamer)resources.GetObject("imageList.ImageStream");
             imageList.TransparentColor = Color.Transparent;
-            imageList.Images.SetKeyName(0, "icons8-dossier-windows-11-color-70.png");
+            imageList.Images.SetKeyName(0, "icons8-dossier-480.png");
             // 
             // DirectoryTree
             // 
