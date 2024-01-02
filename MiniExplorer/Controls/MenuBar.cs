@@ -95,5 +95,71 @@ namespace MiniExplorer.Controls
             if (DirectoryContent != null)
                 DirectoryContent.ShowHiddenFiles = affichageToolStripMenuItem.Checked;
         }
+
+        private void détailsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.détailsToolStripMenuItem.Checked = true;
+
+            if (DirectoryContent != null)
+                DirectoryContent.View = View.Details;
+
+            this.listeToolStripMenuItem.Checked = false;
+            this.petitesIcônesToolStripMenuItem.Checked = false;
+            this.grandesIcônesToolStripMenuItem.Checked = false;
+            this.mosaïquesToolStripMenuItem.Checked = false;
+        }
+
+        private void listeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.listeToolStripMenuItem.Checked = true;
+
+            if (DirectoryContent != null)
+                DirectoryContent.View = View.List;
+
+            this.détailsToolStripMenuItem.Checked = false;
+            this.petitesIcônesToolStripMenuItem.Checked = false;
+            this.grandesIcônesToolStripMenuItem.Checked = false;
+            this.mosaïquesToolStripMenuItem.Checked = false;
+        }
+
+        private void petitesIcônesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.petitesIcônesToolStripMenuItem.Checked = true;
+
+            if (DirectoryContent != null)
+                DirectoryContent.View = View.SmallIcon;
+
+            this.détailsToolStripMenuItem.Checked = false;
+            this.listeToolStripMenuItem.Checked = false;
+            this.grandesIcônesToolStripMenuItem.Checked = false;
+            this.mosaïquesToolStripMenuItem.Checked = false;
+        }
+
+
+        private void grandesIcônesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.grandesIcônesToolStripMenuItem.Checked = true;
+
+            if (DirectoryContent != null)
+                DirectoryContent.View = View.LargeIcon;
+
+            this.détailsToolStripMenuItem.Checked = false;
+            this.listeToolStripMenuItem.Checked = false;
+            this.petitesIcônesToolStripMenuItem.Checked = false;
+            this.mosaïquesToolStripMenuItem.Checked = false;
+        }
+
+        private void mosaïquesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.mosaïquesToolStripMenuItem.Checked = true;
+
+            if (DirectoryContent != null)
+                DirectoryContent.View = View.Tile;
+
+            this.détailsToolStripMenuItem.Checked = false;
+            this.listeToolStripMenuItem.Checked = false;
+            this.petitesIcônesToolStripMenuItem.Checked = false;
+            this.grandesIcônesToolStripMenuItem.Checked = false;
+        }
     }
 }

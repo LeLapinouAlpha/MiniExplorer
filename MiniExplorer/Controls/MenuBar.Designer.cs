@@ -52,7 +52,7 @@
             listeToolStripMenuItem = new ToolStripMenuItem();
             petitesIcônesToolStripMenuItem = new ToolStripMenuItem();
             grandesIcônesToolStripMenuItem = new ToolStripMenuItem();
-            tuilesToolStripMenuItem = new ToolStripMenuItem();
+            mosaïquesToolStripMenuItem = new ToolStripMenuItem();
             afficherLesFichierscachésToolStripMenuItem = new ToolStripMenuItem();
             aideToolStripMenuItem = new ToolStripMenuItem();
             àproposdeToolStripMenuItem = new ToolStripMenuItem();
@@ -185,7 +185,7 @@
             // 
             // dispositionToolStripMenuItem
             // 
-            dispositionToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { détailsToolStripMenuItem, listeToolStripMenuItem, petitesIcônesToolStripMenuItem, grandesIcônesToolStripMenuItem, tuilesToolStripMenuItem });
+            dispositionToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { détailsToolStripMenuItem, listeToolStripMenuItem, petitesIcônesToolStripMenuItem, grandesIcônesToolStripMenuItem, mosaïquesToolStripMenuItem });
             dispositionToolStripMenuItem.Name = "dispositionToolStripMenuItem";
             dispositionToolStripMenuItem.Size = new Size(213, 22);
             dispositionToolStripMenuItem.Text = "&Disposition";
@@ -196,33 +196,38 @@
             détailsToolStripMenuItem.CheckOnClick = true;
             détailsToolStripMenuItem.CheckState = CheckState.Checked;
             détailsToolStripMenuItem.Name = "détailsToolStripMenuItem";
-            détailsToolStripMenuItem.Size = new Size(154, 22);
+            détailsToolStripMenuItem.Size = new Size(180, 22);
             détailsToolStripMenuItem.Text = "&Détails";
+            détailsToolStripMenuItem.Click += détailsToolStripMenuItem_Click;
             // 
             // listeToolStripMenuItem
             // 
             listeToolStripMenuItem.CheckOnClick = true;
             listeToolStripMenuItem.Name = "listeToolStripMenuItem";
-            listeToolStripMenuItem.Size = new Size(154, 22);
+            listeToolStripMenuItem.Size = new Size(180, 22);
             listeToolStripMenuItem.Text = "&Liste";
+            listeToolStripMenuItem.Click += listeToolStripMenuItem_Click;
             // 
             // petitesIcônesToolStripMenuItem
             // 
             petitesIcônesToolStripMenuItem.Name = "petitesIcônesToolStripMenuItem";
-            petitesIcônesToolStripMenuItem.Size = new Size(154, 22);
+            petitesIcônesToolStripMenuItem.Size = new Size(180, 22);
             petitesIcônesToolStripMenuItem.Text = "&Petites icônes";
+            petitesIcônesToolStripMenuItem.Click += petitesIcônesToolStripMenuItem_Click;
             // 
             // grandesIcônesToolStripMenuItem
             // 
             grandesIcônesToolStripMenuItem.Name = "grandesIcônesToolStripMenuItem";
-            grandesIcônesToolStripMenuItem.Size = new Size(154, 22);
+            grandesIcônesToolStripMenuItem.Size = new Size(180, 22);
             grandesIcônesToolStripMenuItem.Text = "&Grandes icônes";
+            grandesIcônesToolStripMenuItem.Click += grandesIcônesToolStripMenuItem_Click;
             // 
-            // tuilesToolStripMenuItem
+            // mosaïquesToolStripMenuItem
             // 
-            tuilesToolStripMenuItem.Name = "tuilesToolStripMenuItem";
-            tuilesToolStripMenuItem.Size = new Size(154, 22);
-            tuilesToolStripMenuItem.Text = "&Mosaïques";
+            mosaïquesToolStripMenuItem.Name = "mosaïquesToolStripMenuItem";
+            mosaïquesToolStripMenuItem.Size = new Size(180, 22);
+            mosaïquesToolStripMenuItem.Text = "&Mosaïques";
+            mosaïquesToolStripMenuItem.Click += mosaïquesToolStripMenuItem_Click;
             // 
             // afficherLesFichierscachésToolStripMenuItem
             // 
@@ -293,7 +298,7 @@
         private ToolStripMenuItem listeToolStripMenuItem;
         private ToolStripMenuItem petitesIcônesToolStripMenuItem;
         private ToolStripMenuItem grandesIcônesToolStripMenuItem;
-        private ToolStripMenuItem tuilesToolStripMenuItem;
+        private ToolStripMenuItem mosaïquesToolStripMenuItem;
         private ToolStripMenuItem afficherLesFichierscachésToolStripMenuItem;
     }
 }
