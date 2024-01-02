@@ -18,6 +18,7 @@ namespace MiniExplorer.Controls
          * **************************************************************************************
          */
         private DirectoryInfo dirInfo;
+        private bool showHiddenFiles;
 
 
         /*
@@ -37,6 +38,7 @@ namespace MiniExplorer.Controls
         {
             InitializeComponent();
             DirPath = @"C:\";
+            ShowHiddenFiles = true;
         }
 
         /*
@@ -61,6 +63,16 @@ namespace MiniExplorer.Controls
 
         public View View { get => this.view.View; set => this.view.View = value; }
 
+        public bool ShowHiddenFiles
+        {
+            get => showHiddenFiles;
+            set
+            {
+                showHiddenFiles = value;
+                Display();
+            }
+        }
+
 
         /*
          * **************************************************************************************
@@ -82,11 +94,25 @@ namespace MiniExplorer.Controls
 
             try
             {
-                foreach (var info in dirInfo.GetDirectories())
-                    AddRow(info.Name, 0, "Dossier", "-", info.LastWriteTime.ToString());
+                if (!ShowHiddenFiles)
+                {
+                    foreach (var info in dirInfo.GetDirectories())
+                        if (info.Name[0] != '.')
+                            AddRow(info.Name, 0, "Dossier", "-", info.LastWriteTime.ToString());
 
-                foreach (var info in dirInfo.GetFiles())
-                    AddRow(info.Name, Utils.File.GetImageIndex(info.Extension), Utils.File.GetFileType(info.Extension), Utils.File.SizeToString(info.Length), info.LastWriteTime.ToString());
+                    foreach (var info in dirInfo.GetFiles())
+                        if (info.Name[0] != '.')
+                            AddRow(info.Name, Utils.File.GetImageIndex(info.Extension), Utils.File.GetFileType(info.Extension), Utils.File.SizeToString(info.Length), info.LastWriteTime.ToString());
+                }
+                else
+                {
+                    foreach (var info in dirInfo.GetDirectories())
+                        AddRow(info.Name, 0, "Dossier", "-", info.LastWriteTime.ToString());
+
+                    foreach (var info in dirInfo.GetFiles())
+                        AddRow(info.Name, Utils.File.GetImageIndex(info.Extension), Utils.File.GetFileType(info.Extension), Utils.File.SizeToString(info.Length), info.LastWriteTime.ToString());
+                }
+
             }
             catch (UnauthorizedAccessException uaEx)
             {
