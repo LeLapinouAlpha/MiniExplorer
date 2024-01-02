@@ -89,5 +89,11 @@ namespace MiniExplorer.Controls
                     DirectoryTree.RootDirPath = folderBrowserDialog.SelectedPath;
             }
         }
+
+        private void afficherLesFichierscachésToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (DirectoryContent != null)
+                DirectoryContent.ShowHiddenFiles = affichageToolStripMenuItem.Checked;
+        }
     }
 }

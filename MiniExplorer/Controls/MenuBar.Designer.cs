@@ -46,9 +46,6 @@
             collerToolStripMenuItem = new ToolStripMenuItem();
             toolStripSeparator4 = new ToolStripSeparator();
             sélectionnertoutToolStripMenuItem = new ToolStripMenuItem();
-            aideToolStripMenuItem = new ToolStripMenuItem();
-            àproposdeToolStripMenuItem = new ToolStripMenuItem();
-            folderBrowserDialog = new FolderBrowserDialog();
             affichageToolStripMenuItem = new ToolStripMenuItem();
             dispositionToolStripMenuItem = new ToolStripMenuItem();
             détailsToolStripMenuItem = new ToolStripMenuItem();
@@ -57,6 +54,9 @@
             grandesIcônesToolStripMenuItem = new ToolStripMenuItem();
             tuilesToolStripMenuItem = new ToolStripMenuItem();
             afficherLesFichierscachésToolStripMenuItem = new ToolStripMenuItem();
+            aideToolStripMenuItem = new ToolStripMenuItem();
+            àproposdeToolStripMenuItem = new ToolStripMenuItem();
+            folderBrowserDialog = new FolderBrowserDialog();
             menuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -176,24 +176,6 @@
             sélectionnertoutToolStripMenuItem.Text = "&Sélectionner tout";
             sélectionnertoutToolStripMenuItem.Click += sélectionnertoutToolStripMenuItem_Click;
             // 
-            // aideToolStripMenuItem
-            // 
-            aideToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { àproposdeToolStripMenuItem });
-            aideToolStripMenuItem.Name = "aideToolStripMenuItem";
-            aideToolStripMenuItem.Size = new Size(43, 34);
-            aideToolStripMenuItem.Text = "A&ide";
-            // 
-            // àproposdeToolStripMenuItem
-            // 
-            àproposdeToolStripMenuItem.Name = "àproposdeToolStripMenuItem";
-            àproposdeToolStripMenuItem.Size = new Size(180, 22);
-            àproposdeToolStripMenuItem.Text = "À pr&opos de...";
-            àproposdeToolStripMenuItem.Click += àproposdeToolStripMenuItem_Click;
-            // 
-            // folderBrowserDialog
-            // 
-            folderBrowserDialog.ShowHiddenFiles = true;
-            // 
             // affichageToolStripMenuItem
             // 
             affichageToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dispositionToolStripMenuItem, afficherLesFichierscachésToolStripMenuItem });
@@ -205,7 +187,7 @@
             // 
             dispositionToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { détailsToolStripMenuItem, listeToolStripMenuItem, petitesIcônesToolStripMenuItem, grandesIcônesToolStripMenuItem, tuilesToolStripMenuItem });
             dispositionToolStripMenuItem.Name = "dispositionToolStripMenuItem";
-            dispositionToolStripMenuItem.Size = new Size(180, 22);
+            dispositionToolStripMenuItem.Size = new Size(213, 22);
             dispositionToolStripMenuItem.Text = "&Disposition";
             // 
             // détailsToolStripMenuItem
@@ -214,32 +196,32 @@
             détailsToolStripMenuItem.CheckOnClick = true;
             détailsToolStripMenuItem.CheckState = CheckState.Checked;
             détailsToolStripMenuItem.Name = "détailsToolStripMenuItem";
-            détailsToolStripMenuItem.Size = new Size(180, 22);
+            détailsToolStripMenuItem.Size = new Size(154, 22);
             détailsToolStripMenuItem.Text = "&Détails";
             // 
             // listeToolStripMenuItem
             // 
             listeToolStripMenuItem.CheckOnClick = true;
             listeToolStripMenuItem.Name = "listeToolStripMenuItem";
-            listeToolStripMenuItem.Size = new Size(180, 22);
+            listeToolStripMenuItem.Size = new Size(154, 22);
             listeToolStripMenuItem.Text = "&Liste";
             // 
             // petitesIcônesToolStripMenuItem
             // 
             petitesIcônesToolStripMenuItem.Name = "petitesIcônesToolStripMenuItem";
-            petitesIcônesToolStripMenuItem.Size = new Size(180, 22);
+            petitesIcônesToolStripMenuItem.Size = new Size(154, 22);
             petitesIcônesToolStripMenuItem.Text = "&Petites icônes";
             // 
             // grandesIcônesToolStripMenuItem
             // 
             grandesIcônesToolStripMenuItem.Name = "grandesIcônesToolStripMenuItem";
-            grandesIcônesToolStripMenuItem.Size = new Size(180, 22);
+            grandesIcônesToolStripMenuItem.Size = new Size(154, 22);
             grandesIcônesToolStripMenuItem.Text = "&Grandes icônes";
             // 
             // tuilesToolStripMenuItem
             // 
             tuilesToolStripMenuItem.Name = "tuilesToolStripMenuItem";
-            tuilesToolStripMenuItem.Size = new Size(180, 22);
+            tuilesToolStripMenuItem.Size = new Size(154, 22);
             tuilesToolStripMenuItem.Text = "&Mosaïques";
             // 
             // afficherLesFichierscachésToolStripMenuItem
@@ -250,6 +232,25 @@
             afficherLesFichierscachésToolStripMenuItem.Name = "afficherLesFichierscachésToolStripMenuItem";
             afficherLesFichierscachésToolStripMenuItem.Size = new Size(213, 22);
             afficherLesFichierscachésToolStripMenuItem.Text = "&Afficher les fichiers cachés";
+            afficherLesFichierscachésToolStripMenuItem.Click += afficherLesFichierscachésToolStripMenuItem_Click;
+            // 
+            // aideToolStripMenuItem
+            // 
+            aideToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { àproposdeToolStripMenuItem });
+            aideToolStripMenuItem.Name = "aideToolStripMenuItem";
+            aideToolStripMenuItem.Size = new Size(43, 34);
+            aideToolStripMenuItem.Text = "A&ide";
+            // 
+            // àproposdeToolStripMenuItem
+            // 
+            àproposdeToolStripMenuItem.Name = "àproposdeToolStripMenuItem";
+            àproposdeToolStripMenuItem.Size = new Size(147, 22);
+            àproposdeToolStripMenuItem.Text = "À pr&opos de...";
+            àproposdeToolStripMenuItem.Click += àproposdeToolStripMenuItem_Click;
+            // 
+            // folderBrowserDialog
+            // 
+            folderBrowserDialog.ShowHiddenFiles = true;
             // 
             // MenuBar
             // 
