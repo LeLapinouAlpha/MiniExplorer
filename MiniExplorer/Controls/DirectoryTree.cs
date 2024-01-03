@@ -17,7 +17,6 @@ namespace MiniExplorer.Controls
          * *                                 INSTANCE VARIABLES                                 *
          * **************************************************************************************
          */
-        private string rootDirPath;
         private DirectoryInfo rootDirInfo;
 
         /*
@@ -35,8 +34,7 @@ namespace MiniExplorer.Controls
         public DirectoryTree()
         {
             InitializeComponent();
-            rootDirPath = Environment.GetLogicalDrives()[0];
-            rootDirInfo = new DirectoryInfo(rootDirPath);
+            RootDirPath = Environment.GetLogicalDrives()[0];
         }
 
         /*
@@ -46,11 +44,10 @@ namespace MiniExplorer.Controls
         */
         public string RootDirPath
         {
-            get => rootDirPath;
+            get => rootDirInfo.Name;
             set
             {
                 string path = value == "" ? Environment.GetLogicalDrives()[0] : value;
-                rootDirPath = path;
                 rootDirInfo = new DirectoryInfo(path);
                 var root = InitDirectoryNode(rootDirInfo);
                 this.view.Nodes.Clear();
