@@ -82,20 +82,22 @@
             nouvelleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dossierToolStripMenuItem, fichierToolStripMenuItem1 });
             nouvelleToolStripMenuItem.Image = (Image)resources.GetObject("nouvelleToolStripMenuItem.Image");
             nouvelleToolStripMenuItem.Name = "nouvelleToolStripMenuItem";
-            nouvelleToolStripMenuItem.Size = new Size(122, 22);
+            nouvelleToolStripMenuItem.Size = new Size(180, 22);
             nouvelleToolStripMenuItem.Text = "&Nouveau";
             // 
             // dossierToolStripMenuItem
             // 
+            dossierToolStripMenuItem.Image = Properties.Resources.dossier;
             dossierToolStripMenuItem.Name = "dossierToolStripMenuItem";
-            dossierToolStripMenuItem.Size = new Size(112, 22);
+            dossierToolStripMenuItem.Size = new Size(180, 22);
             dossierToolStripMenuItem.Text = "&Dossier";
             dossierToolStripMenuItem.Click += dossierToolStripMenuItem_Click;
             // 
             // fichierToolStripMenuItem1
             // 
+            fichierToolStripMenuItem1.Image = Properties.Resources.fichier;
             fichierToolStripMenuItem1.Name = "fichierToolStripMenuItem1";
-            fichierToolStripMenuItem1.Size = new Size(112, 22);
+            fichierToolStripMenuItem1.Size = new Size(180, 22);
             fichierToolStripMenuItem1.Text = "&Fichier";
             fichierToolStripMenuItem1.Click += fichierToolStripMenuItem1_Click;
             // 
@@ -103,19 +105,19 @@
             // 
             ouvrirToolStripMenuItem.Image = (Image)resources.GetObject("ouvrirToolStripMenuItem.Image");
             ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
-            ouvrirToolStripMenuItem.Size = new Size(122, 22);
+            ouvrirToolStripMenuItem.Size = new Size(180, 22);
             ouvrirToolStripMenuItem.Text = "&Ouvrir";
             ouvrirToolStripMenuItem.Click += ouvrirToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(119, 6);
+            toolStripSeparator2.Size = new Size(177, 6);
             // 
             // quitterToolStripMenuItem
             // 
             quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            quitterToolStripMenuItem.Size = new Size(122, 22);
+            quitterToolStripMenuItem.Size = new Size(180, 22);
             quitterToolStripMenuItem.Text = "&Quitter";
             quitterToolStripMenuItem.Click += quitterToolStripMenuItem_Click;
             // 
@@ -196,7 +198,7 @@
             détailsToolStripMenuItem.CheckOnClick = true;
             détailsToolStripMenuItem.CheckState = CheckState.Checked;
             détailsToolStripMenuItem.Name = "détailsToolStripMenuItem";
-            détailsToolStripMenuItem.Size = new Size(180, 22);
+            détailsToolStripMenuItem.Size = new Size(154, 22);
             détailsToolStripMenuItem.Text = "&Détails";
             détailsToolStripMenuItem.Click += détailsToolStripMenuItem_Click;
             // 
@@ -204,28 +206,28 @@
             // 
             listeToolStripMenuItem.CheckOnClick = true;
             listeToolStripMenuItem.Name = "listeToolStripMenuItem";
-            listeToolStripMenuItem.Size = new Size(180, 22);
+            listeToolStripMenuItem.Size = new Size(154, 22);
             listeToolStripMenuItem.Text = "&Liste";
             listeToolStripMenuItem.Click += listeToolStripMenuItem_Click;
             // 
             // petitesIcônesToolStripMenuItem
             // 
             petitesIcônesToolStripMenuItem.Name = "petitesIcônesToolStripMenuItem";
-            petitesIcônesToolStripMenuItem.Size = new Size(180, 22);
+            petitesIcônesToolStripMenuItem.Size = new Size(154, 22);
             petitesIcônesToolStripMenuItem.Text = "&Petites icônes";
             petitesIcônesToolStripMenuItem.Click += petitesIcônesToolStripMenuItem_Click;
             // 
             // grandesIcônesToolStripMenuItem
             // 
             grandesIcônesToolStripMenuItem.Name = "grandesIcônesToolStripMenuItem";
-            grandesIcônesToolStripMenuItem.Size = new Size(180, 22);
+            grandesIcônesToolStripMenuItem.Size = new Size(154, 22);
             grandesIcônesToolStripMenuItem.Text = "&Grandes icônes";
             grandesIcônesToolStripMenuItem.Click += grandesIcônesToolStripMenuItem_Click;
             // 
             // mosaïquesToolStripMenuItem
             // 
             mosaïquesToolStripMenuItem.Name = "mosaïquesToolStripMenuItem";
-            mosaïquesToolStripMenuItem.Size = new Size(180, 22);
+            mosaïquesToolStripMenuItem.Size = new Size(154, 22);
             mosaïquesToolStripMenuItem.Text = "&Mosaïques";
             mosaïquesToolStripMenuItem.Click += mosaïquesToolStripMenuItem_Click;
             // 
