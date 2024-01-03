@@ -37,6 +37,7 @@
             // 
             // cancelButton
             // 
+            cancelButton.CausesValidation = false;
             cancelButton.DialogResult = DialogResult.Cancel;
             cancelButton.Location = new Point(327, 56);
             cancelButton.Name = "cancelButton";
@@ -54,6 +55,7 @@
             createButton.TabIndex = 0;
             createButton.Text = "Créer un nouvel élément";
             createButton.UseVisualStyleBackColor = true;
+            createButton.Click += createButton_Click;
             // 
             // elementNameTextBox
             // 
@@ -61,6 +63,7 @@
             elementNameTextBox.Name = "elementNameTextBox";
             elementNameTextBox.Size = new Size(395, 23);
             elementNameTextBox.TabIndex = 2;
+            elementNameTextBox.Validating += elementNameTextBox_Validating;
             // 
             // elementNameLabel
             // 

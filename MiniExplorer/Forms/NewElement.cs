@@ -55,5 +55,34 @@ namespace MiniExplorer.Forms
          * *                                       EVENTS                                       *
          * **************************************************************************************
          */
+        private void createButton_Click(object sender, EventArgs e)
+        {
+            if(this.ValidateChildren())
+                this.DialogResult = DialogResult.OK;
+        }
+
+        private void elementNameTextBox_Validating(object sender, CancelEventArgs e)
+        {
+            if (string.IsNullOrEmpty(ElementName))
+            {
+                e.Cancel = true;
+                this.DialogResult = DialogResult.Cancel;
+                return;
+            }
+
+            foreach (char invalidChar in Path.GetInvalidFileNameChars())
+            {
+                if (ElementName.Contains(invalidChar))
+                {
+                    e.Cancel = true;
+                    MessageBox.Show(
+                        $"Le nom indiqué contient le caractère invalide suivant : '{invalidChar}'",
+                        "Nom d'élément invalide",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error); ;
+                    return;
+                }
+            }
+        }
     }
 }

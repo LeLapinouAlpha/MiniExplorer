@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -129,6 +130,42 @@ namespace MiniExplorer.Controls
         {
             foreach (ListViewItem item in this.view.Items)
                 item.Selected = true;
+        }
+
+        public void CreateFile(string name)
+        {
+            var newFileInfo = new FileInfo(Path.Join(this.DirPath, name));
+            try
+            {
+                using (newFileInfo.Create())
+                    Display();
+            }
+            catch (IOException ioEx)
+            {
+                MessageBox.Show(
+                    ioEx.Message,
+                    $"Erreur de création du fichier '{name}'",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+        }
+
+        public void CreateDirectory(string name)
+        {
+            var newDirInfo = new DirectoryInfo(Path.Join(this.DirPath, name));
+            try
+            {
+                newDirInfo.Create();
+                Display();
+            }
+            catch (IOException ioEx)
+            {
+                MessageBox.Show(
+                    ioEx.Message,
+                    $"Erreur de création du dossier '{name}'",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
         }
 
         /*

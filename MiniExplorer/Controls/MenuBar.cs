@@ -71,12 +71,16 @@ namespace MiniExplorer.Controls
 
         private void dossierToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Forms.NewElement().ShowDialog();
+            var newElementForm = new Forms.NewElement();
+            if (newElementForm.ShowDialog() == DialogResult.OK)
+                this.DirectoryContent?.CreateDirectory(newElementForm.ElementName);
         }
 
         private void fichierToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            new Forms.NewElement().ShowDialog();
+            var newElementForm = new Forms.NewElement();
+            if (newElementForm.ShowDialog() == DialogResult.OK)
+                this.DirectoryContent?.CreateFile(newElementForm.ElementName);
         }
 
         private void ouvrirToolStripMenuItem_Click(object sender, EventArgs e)
