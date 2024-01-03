@@ -173,5 +173,10 @@ namespace MiniExplorer.Controls
         {
             this.DirectoryContent?.Reload();
         }
+
+        private void inverserLaSéléctionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.DirectoryContent?.ReverseSelection();
+        }
     }
 }

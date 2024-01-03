@@ -132,6 +132,12 @@ namespace MiniExplorer.Controls
                 item.Selected = true;
         }
 
+        public void ReverseSelection()
+        {
+            foreach (ListViewItem item in this.view.Items)
+                item.Selected = !item.Selected;
+        }
+
         public void CreateFile(string name)
         {
             var newFileInfo = new FileInfo(Path.Join(this.DirPath, name));

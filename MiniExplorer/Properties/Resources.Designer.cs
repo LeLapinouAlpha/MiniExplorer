@@ -173,6 +173,16 @@ namespace MiniExplorer.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap reverse_selection {
+            get {
+                object obj = ResourceManager.GetObject("reverse-selection", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap selectionner {
             get {
                 object obj = ResourceManager.GetObject("selectionner", resourceCulture);
