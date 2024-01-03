@@ -31,7 +31,7 @@
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DirectoryTree));
             view = new TreeView();
-            imageList = new ImageList(components);
+            folderIcons = new ImageList(components);
             SuspendLayout();
             // 
             // view
@@ -39,7 +39,7 @@
             view.Dock = DockStyle.Fill;
             view.FullRowSelect = true;
             view.ImageIndex = 0;
-            view.ImageList = imageList;
+            view.ImageList = folderIcons;
             view.Location = new Point(0, 0);
             view.Name = "view";
             view.SelectedImageIndex = 0;
@@ -48,12 +48,12 @@
             view.BeforeExpand += view_BeforeExpand;
             view.BeforeSelect += view_BeforeSelect;
             // 
-            // imageList
+            // folderIcons
             // 
-            imageList.ColorDepth = ColorDepth.Depth32Bit;
-            imageList.ImageStream = (ImageListStreamer)resources.GetObject("imageList.ImageStream");
-            imageList.TransparentColor = Color.Transparent;
-            imageList.Images.SetKeyName(0, "icons8-dossier-480.png");
+            folderIcons.ColorDepth = ColorDepth.Depth32Bit;
+            folderIcons.ImageStream = (ImageListStreamer)resources.GetObject("folderIcons.ImageStream");
+            folderIcons.TransparentColor = Color.Transparent;
+            folderIcons.Images.SetKeyName(0, "dossier.png");
             // 
             // DirectoryTree
             // 
@@ -68,6 +68,6 @@
         #endregion
 
         private TreeView view;
-        private ImageList imageList;
+        private ImageList folderIcons;
     }
 }
