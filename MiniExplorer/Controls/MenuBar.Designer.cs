@@ -84,7 +84,7 @@
             nouvelleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dossierToolStripMenuItem, fichierToolStripMenuItem1 });
             nouvelleToolStripMenuItem.Image = (Image)resources.GetObject("nouvelleToolStripMenuItem.Image");
             nouvelleToolStripMenuItem.Name = "nouvelleToolStripMenuItem";
-            nouvelleToolStripMenuItem.Size = new Size(150, 22);
+            nouvelleToolStripMenuItem.Size = new Size(180, 22);
             nouvelleToolStripMenuItem.Text = "&Nouveau";
             // 
             // dossierToolStripMenuItem
@@ -110,21 +110,21 @@
             ouvrirToolStripMenuItem.Image = (Image)resources.GetObject("ouvrirToolStripMenuItem.Image");
             ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
             ouvrirToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.O;
-            ouvrirToolStripMenuItem.Size = new Size(150, 22);
+            ouvrirToolStripMenuItem.Size = new Size(180, 22);
             ouvrirToolStripMenuItem.Text = "&Ouvrir";
             ouvrirToolStripMenuItem.Click += ouvrirToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(147, 6);
+            toolStripSeparator2.Size = new Size(177, 6);
             // 
             // quitterToolStripMenuItem
             // 
             quitterToolStripMenuItem.Image = Properties.Resources.quitter;
             quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
-            quitterToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.D4;
-            quitterToolStripMenuItem.Size = new Size(150, 22);
+            quitterToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.F4;
+            quitterToolStripMenuItem.Size = new Size(180, 22);
             quitterToolStripMenuItem.Text = "&Quitter";
             quitterToolStripMenuItem.Click += quitterToolStripMenuItem_Click;
             // 
