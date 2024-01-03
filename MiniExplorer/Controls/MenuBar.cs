@@ -93,7 +93,10 @@ namespace MiniExplorer.Controls
         private void afficherLesFichierscachésToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (DirectoryContent != null)
-                DirectoryContent.ShowHiddenFiles = affichageToolStripMenuItem.Checked;
+            {
+                DirectoryContent.ShowHiddenFiles = !DirectoryContent.ShowHiddenFiles;
+                this.afficherLesFichierscachésToolStripMenuItem.Checked = DirectoryContent.ShowHiddenFiles;
+            }
         }
 
         private void détailsToolStripMenuItem_Click(object sender, EventArgs e)
