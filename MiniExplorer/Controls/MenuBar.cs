@@ -99,7 +99,9 @@ namespace MiniExplorer.Controls
             if (DirectoryContent != null)
             {
                 DirectoryContent.ShowHiddenFiles = !DirectoryContent.ShowHiddenFiles;
-                this.afficherLesFichierscachésToolStripMenuItem.Checked = DirectoryContent.ShowHiddenFiles;
+                if (DirectoryTree != null)
+                    DirectoryTree.ShowHiddenDirectories = !DirectoryTree.ShowHiddenDirectories;
+                this.afficherLesFichierscachésToolStripMenuItem.Checked = this.afficherLesFichierscachésToolStripMenuItem.Checked;
             }
         }
 
