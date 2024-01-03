@@ -180,5 +180,10 @@ namespace MiniExplorer.Controls
         {
             this.DirectoryContent?.ReverseSelection();
         }
+
+        private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.DirectoryContent?.RemoveSelectedElements();
+        }
     }
 }

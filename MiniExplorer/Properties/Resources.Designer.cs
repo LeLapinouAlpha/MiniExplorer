@@ -73,6 +73,16 @@ namespace MiniExplorer.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bouton_supprimer {
+            get {
+                object obj = ResourceManager.GetObject("bouton-supprimer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap detail {
             get {
                 object obj = ResourceManager.GetObject("detail", resourceCulture);

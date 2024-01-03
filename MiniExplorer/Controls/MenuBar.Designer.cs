@@ -59,6 +59,8 @@
             aideToolStripMenuItem = new ToolStripMenuItem();
             àproposdeToolStripMenuItem = new ToolStripMenuItem();
             folderBrowserDialog = new FolderBrowserDialog();
+            toolStripSeparator1 = new ToolStripSeparator();
+            supprimerToolStripMenuItem = new ToolStripMenuItem();
             menuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -84,7 +86,7 @@
             nouvelleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dossierToolStripMenuItem, fichierToolStripMenuItem1 });
             nouvelleToolStripMenuItem.Image = (Image)resources.GetObject("nouvelleToolStripMenuItem.Image");
             nouvelleToolStripMenuItem.Name = "nouvelleToolStripMenuItem";
-            nouvelleToolStripMenuItem.Size = new Size(180, 22);
+            nouvelleToolStripMenuItem.Size = new Size(153, 22);
             nouvelleToolStripMenuItem.Text = "&Nouveau";
             // 
             // dossierToolStripMenuItem
@@ -110,27 +112,27 @@
             ouvrirToolStripMenuItem.Image = (Image)resources.GetObject("ouvrirToolStripMenuItem.Image");
             ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
             ouvrirToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.O;
-            ouvrirToolStripMenuItem.Size = new Size(180, 22);
+            ouvrirToolStripMenuItem.Size = new Size(153, 22);
             ouvrirToolStripMenuItem.Text = "&Ouvrir";
             ouvrirToolStripMenuItem.Click += ouvrirToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(177, 6);
+            toolStripSeparator2.Size = new Size(150, 6);
             // 
             // quitterToolStripMenuItem
             // 
             quitterToolStripMenuItem.Image = Properties.Resources.quitter;
             quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
             quitterToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.F4;
-            quitterToolStripMenuItem.Size = new Size(180, 22);
+            quitterToolStripMenuItem.Size = new Size(153, 22);
             quitterToolStripMenuItem.Text = "&Quitter";
             quitterToolStripMenuItem.Click += quitterToolStripMenuItem_Click;
             // 
             // modifierToolStripMenuItem
             // 
-            modifierToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { annulerToolStripMenuItem, rétablirToolStripMenuItem, toolStripSeparator3, couperToolStripMenuItem, copierToolStripMenuItem, collerToolStripMenuItem, toolStripSeparator4, sélectionnertoutToolStripMenuItem, inverserLaSéléctionToolStripMenuItem });
+            modifierToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { annulerToolStripMenuItem, rétablirToolStripMenuItem, toolStripSeparator3, couperToolStripMenuItem, copierToolStripMenuItem, collerToolStripMenuItem, toolStripSeparator4, sélectionnertoutToolStripMenuItem, inverserLaSéléctionToolStripMenuItem, toolStripSeparator1, supprimerToolStripMenuItem });
             modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
             modifierToolStripMenuItem.Size = new Size(64, 34);
             modifierToolStripMenuItem.Text = "&Modifier";
@@ -298,6 +300,20 @@
             // 
             folderBrowserDialog.ShowHiddenFiles = true;
             // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(278, 6);
+            // 
+            // supprimerToolStripMenuItem
+            // 
+            supprimerToolStripMenuItem.Image = Properties.Resources.bouton_supprimer;
+            supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
+            supprimerToolStripMenuItem.ShortcutKeys = Keys.Delete;
+            supprimerToolStripMenuItem.Size = new Size(327, 22);
+            supprimerToolStripMenuItem.Text = "Supprimer les éléments séléctionnés";
+            supprimerToolStripMenuItem.Click += supprimerToolStripMenuItem_Click;
+            // 
             // MenuBar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -343,5 +359,7 @@
         private ToolStripMenuItem afficherLesFichierscachésToolStripMenuItem;
         private ToolStripMenuItem actualiserToolStripMenuItem;
         private ToolStripMenuItem inverserLaSéléctionToolStripMenuItem;
+        private ToolStripSeparator toolStripSeparator1;
+        private ToolStripMenuItem supprimerToolStripMenuItem;
     }
 }
