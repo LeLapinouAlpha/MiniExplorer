@@ -18,6 +18,7 @@ namespace MiniExplorer.Controls
          * **************************************************************************************
          */
         private DirectoryInfo rootDirInfo;
+        private bool showHiddenDirectories;
 
         /*
          * **************************************************************************************
@@ -35,6 +36,7 @@ namespace MiniExplorer.Controls
         {
             InitializeComponent();
             RootDirPath = Environment.GetLogicalDrives()[0];
+            showHiddenDirectories = true;
         }
 
         /*
@@ -47,7 +49,7 @@ namespace MiniExplorer.Controls
             get => rootDirInfo.Name;
             set
             {
-                string path = value == "" ? Environment.GetLogicalDrives()[0] : value;
+                string path = string.IsNullOrEmpty(value) ? Environment.GetLogicalDrives()[0] : value;
                 rootDirInfo = new DirectoryInfo(path);
                 var root = InitDirectoryNode(rootDirInfo);
                 this.view.Nodes.Clear();
@@ -55,6 +57,15 @@ namespace MiniExplorer.Controls
             }
         }
 
+        public bool ShowHiddenDirectories
+        {
+            get => showHiddenDirectories;
+            set
+            {
+                showHiddenDirectories = value;
+                RootDirPath = RootDirPath;
+            }
+        }
 
         /*
          * **************************************************************************************
@@ -74,8 +85,13 @@ namespace MiniExplorer.Controls
             try
             {
                 var dirInfo = (DirectoryInfo)node.Tag;
-                foreach (var info in dirInfo.GetDirectories())
-                    node.Nodes.Add(InitDirectoryNode(info));
+                if (ShowHiddenDirectories)
+                    foreach (var info in dirInfo.GetDirectories())
+                        node.Nodes.Add(InitDirectoryNode(info));
+                else
+                    foreach (var info in dirInfo.GetDirectories())
+                        if (info.Name[0] != '.')
+                            node.Nodes.Add(InitDirectoryNode(info));
             }
             catch (Exception)
             {
