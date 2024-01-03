@@ -38,7 +38,7 @@
             // cancelButton
             // 
             cancelButton.DialogResult = DialogResult.Cancel;
-            cancelButton.Location = new Point(327, 80);
+            cancelButton.Location = new Point(327, 56);
             cancelButton.Name = "cancelButton";
             cancelButton.Size = new Size(80, 24);
             cancelButton.TabIndex = 1;
@@ -48,7 +48,7 @@
             // createButton
             // 
             createButton.DialogResult = DialogResult.OK;
-            createButton.Location = new Point(165, 80);
+            createButton.Location = new Point(164, 56);
             createButton.Name = "createButton";
             createButton.Size = new Size(157, 24);
             createButton.TabIndex = 0;
@@ -57,7 +57,7 @@
             // 
             // elementNameTextBox
             // 
-            elementNameTextBox.Location = new Point(12, 39);
+            elementNameTextBox.Location = new Point(12, 27);
             elementNameTextBox.Name = "elementNameTextBox";
             elementNameTextBox.Size = new Size(395, 23);
             elementNameTextBox.TabIndex = 2;
@@ -77,7 +77,7 @@
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             CancelButton = cancelButton;
-            ClientSize = new Size(419, 116);
+            ClientSize = new Size(419, 91);
             Controls.Add(elementNameLabel);
             Controls.Add(elementNameTextBox);
             Controls.Add(createButton);
