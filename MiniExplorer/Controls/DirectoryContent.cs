@@ -74,7 +74,6 @@ namespace MiniExplorer.Controls
             }
         }
 
-
         /*
          * **************************************************************************************
          * *                                       METHODS                                      *
@@ -177,6 +176,53 @@ namespace MiniExplorer.Controls
         public void Reload()
         {
             Display();
+        }
+
+        public void RemoveSelectedElements()
+        {
+            if (this.view.SelectedItems.Count == 0)
+                return;
+
+            var dialogResult = MessageBox.Show(
+                "Êtes-vous sûr de vouloir supprimer les éléments sélectionnés ?",
+                "Confirmer la suppression",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question);
+
+            if (dialogResult == DialogResult.Yes)
+            {
+                foreach (ListViewItem item in this.view.SelectedItems)
+                {
+                    if (item.Text == "..")
+                        continue;
+
+                    var path = Path.Combine(DirPath, item.Text);
+                    try
+                    {
+                        if (Directory.Exists(path))
+                            Directory.Delete(path, true);
+                        else if (File.Exists(path))
+                            File.Delete(path);
+                    }
+                    catch (UnauthorizedAccessException uaEx)
+                    {
+                        MessageBox.Show(
+                            uaEx.Message,
+                            "Accès non autorisé",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+                    catch (IOException ioEx)
+                    {
+                        MessageBox.Show(
+                            ioEx.Message,
+                            "Erreur lors de la suppression",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
+                    }
+                }
+                Display();
+            }
         }
 
         /*
