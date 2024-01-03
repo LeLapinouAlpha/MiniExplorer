@@ -168,6 +168,11 @@ namespace MiniExplorer.Controls
             }
         }
 
+        public void Reload()
+        {
+            Display();
+        }
+
         /*
          * **************************************************************************************
          * *                                       EVENTS                                       *
@@ -189,12 +194,6 @@ namespace MiniExplorer.Controls
         private void view_SelectedIndexChanged(object sender, EventArgs e)
         {
             SelectionChanged?.Invoke(sender, e);
-        }
-
-        private void view_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.Control && e.KeyCode == Keys.A)
-                SelectAll();
         }
     }
 }

@@ -54,7 +54,6 @@
             view.UseCompatibleStateImageBehavior = false;
             view.View = View.Details;
             view.SelectedIndexChanged += view_SelectedIndexChanged;
-            view.KeyDown += view_KeyDown;
             view.MouseDoubleClick += view_MouseDoubleClick;
             // 
             // nameColumn

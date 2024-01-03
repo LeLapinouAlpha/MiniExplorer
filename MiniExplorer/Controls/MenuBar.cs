@@ -168,5 +168,10 @@ namespace MiniExplorer.Controls
             this.petitesIcônesToolStripMenuItem.Checked = false;
             this.grandesIcônesToolStripMenuItem.Checked = false;
         }
+
+        private void actualiserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.DirectoryContent?.Reload();
+        }
     }
 }
