@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
@@ -224,6 +225,60 @@ namespace MiniExplorer.Controls
                 Display();
             }
         }
+
+        public void CopySelectedElements()
+        {
+            var copiedPaths = new StringCollection();
+            foreach (ListViewItem item in this.view.SelectedItems)
+                copiedPaths.Add(Path.Combine(DirPath, item.Text));
+            Clipboard.SetFileDropList(copiedPaths);
+        }
+
+        public void PasteElements()
+        {
+            foreach (string? sourcePath in Clipboard.GetFileDropList())
+            {
+                if (sourcePath == null)
+                    continue;
+
+                try
+                {
+                    string fileName = Path.GetFileName(sourcePath);
+                    string destPath = Path.Combine(DirPath, fileName);
+                    if (File.Exists(sourcePath))
+                        File.Copy(sourcePath, destPath, true);
+                    else if (Directory.Exists(sourcePath))
+                        CopyDirectory(sourcePath, destPath);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message, "Erreur lors de la copie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            Display();
+        }
+
+        private void CopyDirectory(string sourceDir, string destinationDir)
+        {
+            var dirInfo = new DirectoryInfo(sourceDir);
+
+            if (!dirInfo.Exists)
+                throw new DirectoryNotFoundException($"Le dossier source n'existe pas: {sourceDir}");
+
+            Directory.CreateDirectory(destinationDir);
+            foreach (FileInfo file in dirInfo.GetFiles())
+            {
+                string tempPath = Path.Combine(destinationDir, file.Name);
+                file.CopyTo(tempPath, false);
+            }
+            foreach (DirectoryInfo subdir in dirInfo.GetDirectories())
+            {
+                string tempPath = Path.Combine(destinationDir, subdir.Name);
+                CopyDirectory(subdir.FullName, tempPath);
+            }
+        }
+
 
         /*
          * **************************************************************************************
