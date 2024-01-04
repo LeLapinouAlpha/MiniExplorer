@@ -80,6 +80,7 @@ namespace MiniExplorer.Forms
         */
         private void Display()
         {
+            this.elementNameTextBox.Text = "";
             switch (this.modification)
             {
                 case ModificationType.NEW_DIRECTORY:

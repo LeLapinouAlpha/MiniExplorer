@@ -321,24 +321,21 @@ namespace MiniExplorer.Controls
                 CopyDirectory(dirInfo.FullName, Path.Combine(destinationDir, dirInfo.Name));
         }
 
-        public void RenameFirstSelectedElement()
+        public void RenameFirstSelectedElement(string newName)
         {
             if (this.view.SelectedItems.Count > 0)
             {
                 var selectedItem = this.view.SelectedItems[0];
-                var renameElementDialog = new Forms.ElementModificationDialog(Forms.ElementModificationDialog.ModificationType.RENAME);
-                if (renameElementDialog.ShowDialog() == DialogResult.OK)
-                {
-                    if (renameElementDialog.ElementName == selectedItem.Text)
+                    if (newName == selectedItem.Text)
                         return;
 
                     string path = Path.Combine(DirPath, selectedItem.Text);
                     try
                     {
                         if (File.Exists(path))
-                            FileSystem.RenameFile(path, renameElementDialog.ElementName);
+                            FileSystem.RenameFile(path, newName);
                         else if (Directory.Exists(path))
-                            FileSystem.RenameDirectory(path, renameElementDialog.ElementName);
+                            FileSystem.RenameDirectory(path, newName);
                         else
                             MessageBox.Show(
                                 $"L'élément '{selectedItem.Text}' n'existe pas.",
@@ -357,7 +354,6 @@ namespace MiniExplorer.Controls
                     }
                 }
                 Display();
-            }
         }
 
         /*

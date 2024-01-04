@@ -17,6 +17,7 @@ namespace MiniExplorer.Controls
          * *                                 INSTANCE VARIABLES                                 *
          * **************************************************************************************
          */
+        Forms.ElementModificationDialog elementModificationDialog;
 
         /*
          * **************************************************************************************
@@ -32,6 +33,7 @@ namespace MiniExplorer.Controls
         public MenuBar()
         {
             InitializeComponent();
+            elementModificationDialog = new Forms.ElementModificationDialog();
         }
 
 
@@ -71,16 +73,16 @@ namespace MiniExplorer.Controls
 
         private void dossierToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            var newElementForm = new Forms.ElementModificationDialog();
-            if (newElementForm.ShowDialog() == DialogResult.OK)
-                this.DirectoryContent?.CreateDirectory(newElementForm.ElementName);
+            elementModificationDialog.Modification = Forms.ElementModificationDialog.ModificationType.NEW_DIRECTORY;
+            if (elementModificationDialog.ShowDialog() == DialogResult.OK)
+                this.DirectoryContent?.CreateDirectory(elementModificationDialog.ElementName);
         }
 
         private void fichierToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            var newElementForm = new Forms.ElementModificationDialog(Forms.ElementModificationDialog.ModificationType.NEW_FILE);
-            if (newElementForm.ShowDialog() == DialogResult.OK)
-                this.DirectoryContent?.CreateFile(newElementForm.ElementName);
+            elementModificationDialog.Modification = Forms.ElementModificationDialog.ModificationType.NEW_FILE;
+            if (elementModificationDialog.ShowDialog() == DialogResult.OK)
+                this.DirectoryContent?.CreateFile(elementModificationDialog.ElementName);
         }
 
         private void ouvrirToolStripMenuItem_Click(object sender, EventArgs e)
@@ -203,7 +205,9 @@ namespace MiniExplorer.Controls
 
         private void renommerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.DirectoryContent?.RenameFirstSelectedElement();
+            elementModificationDialog.Modification = Forms.ElementModificationDialog.ModificationType.RENAME;
+            if (elementModificationDialog.ShowDialog() == DialogResult.OK)
+                this.DirectoryContent?.RenameFirstSelectedElement(elementModificationDialog.ElementName);
         }
     }
 }
