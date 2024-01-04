@@ -44,11 +44,11 @@
             // 
             // toolStrip
             // 
+            toolStrip.BackColor = SystemColors.ButtonFace;
             toolStrip.Dock = DockStyle.Fill;
             toolStrip.Items.AddRange(new ToolStripItem[] { previousButton, nextButton, parentButton, toolStripSeparator1, navigationBarTextBox, reloadButton, toolStripSeparator2, searchBarTextBox, searchButton });
             toolStrip.Location = new Point(0, 0);
             toolStrip.Name = "toolStrip";
-            toolStrip.RenderMode = ToolStripRenderMode.System;
             toolStrip.Size = new Size(760, 31);
             toolStrip.TabIndex = 0;
             toolStrip.Text = "toolStrip1";

@@ -66,6 +66,7 @@
             // 
             // menuStrip
             // 
+            menuStrip.BackColor = SystemColors.ButtonFace;
             menuStrip.Dock = DockStyle.Fill;
             menuStrip.Items.AddRange(new ToolStripItem[] { fichierToolStripMenuItem, modifierToolStripMenuItem, affichageToolStripMenuItem, aideToolStripMenuItem });
             menuStrip.Location = new Point(0, 0);
@@ -85,7 +86,7 @@
             // 
             nouvelleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dossierToolStripMenuItem, fichierToolStripMenuItem1 });
             nouvelleToolStripMenuItem.Name = "nouvelleToolStripMenuItem";
-            nouvelleToolStripMenuItem.Size = new Size(180, 22);
+            nouvelleToolStripMenuItem.Size = new Size(153, 22);
             nouvelleToolStripMenuItem.Text = "&Nouveau";
             // 
             // dossierToolStripMenuItem
@@ -108,20 +109,20 @@
             // 
             ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
             ouvrirToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.O;
-            ouvrirToolStripMenuItem.Size = new Size(180, 22);
+            ouvrirToolStripMenuItem.Size = new Size(153, 22);
             ouvrirToolStripMenuItem.Text = "&Ouvrir";
             ouvrirToolStripMenuItem.Click += ouvrirToolStripMenuItem_Click;
             // 
             // toolStripSeparator2
             // 
             toolStripSeparator2.Name = "toolStripSeparator2";
-            toolStripSeparator2.Size = new Size(177, 6);
+            toolStripSeparator2.Size = new Size(150, 6);
             // 
             // quitterToolStripMenuItem
             // 
             quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
             quitterToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.F4;
-            quitterToolStripMenuItem.Size = new Size(180, 22);
+            quitterToolStripMenuItem.Size = new Size(153, 22);
             quitterToolStripMenuItem.Text = "&Quitter";
             quitterToolStripMenuItem.Click += quitterToolStripMenuItem_Click;
             // 
@@ -237,7 +238,7 @@
             détailsToolStripMenuItem.CheckOnClick = true;
             détailsToolStripMenuItem.CheckState = CheckState.Checked;
             détailsToolStripMenuItem.Name = "détailsToolStripMenuItem";
-            détailsToolStripMenuItem.Size = new Size(180, 22);
+            détailsToolStripMenuItem.Size = new Size(154, 22);
             détailsToolStripMenuItem.Text = "&Détails";
             détailsToolStripMenuItem.Click += détailsToolStripMenuItem_Click;
             // 
@@ -245,28 +246,28 @@
             // 
             listeToolStripMenuItem.CheckOnClick = true;
             listeToolStripMenuItem.Name = "listeToolStripMenuItem";
-            listeToolStripMenuItem.Size = new Size(180, 22);
+            listeToolStripMenuItem.Size = new Size(154, 22);
             listeToolStripMenuItem.Text = "&Liste";
             listeToolStripMenuItem.Click += listeToolStripMenuItem_Click;
             // 
             // petitesIcônesToolStripMenuItem
             // 
             petitesIcônesToolStripMenuItem.Name = "petitesIcônesToolStripMenuItem";
-            petitesIcônesToolStripMenuItem.Size = new Size(180, 22);
+            petitesIcônesToolStripMenuItem.Size = new Size(154, 22);
             petitesIcônesToolStripMenuItem.Text = "&Petites icônes";
             petitesIcônesToolStripMenuItem.Click += petitesIcônesToolStripMenuItem_Click;
             // 
             // grandesIcônesToolStripMenuItem
             // 
             grandesIcônesToolStripMenuItem.Name = "grandesIcônesToolStripMenuItem";
-            grandesIcônesToolStripMenuItem.Size = new Size(180, 22);
+            grandesIcônesToolStripMenuItem.Size = new Size(154, 22);
             grandesIcônesToolStripMenuItem.Text = "&Grandes icônes";
             grandesIcônesToolStripMenuItem.Click += grandesIcônesToolStripMenuItem_Click;
             // 
             // mosaïquesToolStripMenuItem
             // 
             mosaïquesToolStripMenuItem.Name = "mosaïquesToolStripMenuItem";
-            mosaïquesToolStripMenuItem.Size = new Size(180, 22);
+            mosaïquesToolStripMenuItem.Size = new Size(154, 22);
             mosaïquesToolStripMenuItem.Text = "&Mosaïques";
             mosaïquesToolStripMenuItem.Click += mosaïquesToolStripMenuItem_Click;
             // 
