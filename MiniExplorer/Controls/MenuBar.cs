@@ -183,7 +183,7 @@ namespace MiniExplorer.Controls
 
         private void supprimerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.DirectoryContent?.RemoveSelectedElements();
+            this.DirectoryContent?.PutElementInRecycleBin();
         }
 
         private void copierToolStripMenuItem_Click(object sender, EventArgs e)

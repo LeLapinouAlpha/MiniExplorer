@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.FileIO;
+using System;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.ComponentModel;
@@ -175,13 +176,13 @@ namespace MiniExplorer.Controls
             }
         }
 
-        public void RemoveSelectedElements()
+        public void PutElementInRecycleBin()
         {
             if (this.view.SelectedItems.Count == 0)
                 return;
 
             var dialogResult = MessageBox.Show(
-                "Êtes-vous sûr de vouloir supprimer les éléments sélectionnés ?",
+                "Êtes-vous sûr de vouloir déplacer les éléments sélectionnés dans la corbeille ?",
                 "Confirmer la suppression",
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question);
@@ -197,9 +198,19 @@ namespace MiniExplorer.Controls
                     try
                     {
                         if (Directory.Exists(path))
-                            Directory.Delete(path, true);
+                        {
+                            FileSystem.DeleteDirectory(
+                                path,
+                                UIOption.OnlyErrorDialogs,
+                                RecycleOption.SendToRecycleBin);
+                        }
                         else if (File.Exists(path))
-                            File.Delete(path);
+                        {
+                            FileSystem.DeleteFile(
+                                path,
+                                UIOption.OnlyErrorDialogs,
+                                RecycleOption.SendToRecycleBin);
+                        }
                     }
                     catch (UnauthorizedAccessException uaEx)
                     {
@@ -213,7 +224,7 @@ namespace MiniExplorer.Controls
                     {
                         MessageBox.Show(
                             ioEx.Message,
-                            "Erreur lors de la suppression",
+                            "Erreur lors du déplacement dans la corbeille",
                             MessageBoxButtons.OK,
                             MessageBoxIcon.Error);
                     }
