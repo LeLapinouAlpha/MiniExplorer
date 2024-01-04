@@ -61,7 +61,7 @@ namespace MiniExplorer.Controls
 
         private void àproposdeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            new Forms.AboutForm().ShowDialog();
+            new Forms.AboutDialog().ShowDialog();
         }
 
         private void sélectionnertoutToolStripMenuItem_Click(object sender, EventArgs e)

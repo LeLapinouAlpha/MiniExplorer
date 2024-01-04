@@ -1,6 +1,6 @@
 ﻿namespace MiniExplorer.Forms
 {
-    partial class AboutForm
+    partial class AboutDialog
     {
         /// <summary>
         /// Variable nécessaire au concepteur.
@@ -27,7 +27,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutForm));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AboutDialog));
             tableLayoutPanel = new TableLayoutPanel();
             logoPictureBox = new PictureBox();
             labelProductName = new Label();
@@ -69,7 +69,6 @@
             // logoPictureBox
             // 
             logoPictureBox.Dock = DockStyle.Fill;
-            logoPictureBox.Image = (Image)resources.GetObject("logoPictureBox.Image");
             logoPictureBox.Location = new Point(4, 3);
             logoPictureBox.Margin = new Padding(4, 3, 4, 3);
             logoPictureBox.Name = "logoPictureBox";
@@ -152,7 +151,7 @@
             okButton.TabIndex = 24;
             okButton.Text = "&OK";
             // 
-            // AboutForm
+            // AboutDialog
             // 
             AcceptButton = okButton;
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -164,7 +163,7 @@
             Margin = new Padding(4, 3, 4, 3);
             MaximizeBox = false;
             MinimizeBox = false;
-            Name = "AboutForm";
+            Name = "AboutDialog";
             Padding = new Padding(10);
             ShowIcon = false;
             ShowInTaskbar = false;

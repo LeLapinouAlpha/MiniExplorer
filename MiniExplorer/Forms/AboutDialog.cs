@@ -9,9 +9,9 @@ using System.Windows.Forms;
 
 namespace MiniExplorer.Forms
 {
-    partial class AboutForm : Form
+    partial class AboutDialog : Form
     {
-        public AboutForm()
+        public AboutDialog()
         {
             InitializeComponent();
             this.Text = String.Format("À propos de {0}", AssemblyTitle);
