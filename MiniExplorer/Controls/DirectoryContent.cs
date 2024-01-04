@@ -329,20 +329,19 @@ namespace MiniExplorer.Controls
                 var renameElementDialog = new Forms.ElementModificationDialog(Forms.ElementModificationDialog.ModificationType.RENAME);
                 if (renameElementDialog.ShowDialog() == DialogResult.OK)
                 {
-                    if (renameElementDialog.ElementName == selectedItem.Name)
+                    if (renameElementDialog.ElementName == selectedItem.Text)
                         return;
 
-                    string path = Path.Combine(DirPath, selectedItem.Name);
-                    string newPath = Path.Combine(DirPath, renameElementDialog.ElementName);
+                    string path = Path.Combine(DirPath, selectedItem.Text);
                     try
                     {
                         if (File.Exists(path))
-                            FileSystem.RenameFile(path, newPath);
+                            FileSystem.RenameFile(path, renameElementDialog.ElementName);
                         else if (Directory.Exists(path))
-                            FileSystem.RenameDirectory(path, newPath);
+                            FileSystem.RenameDirectory(path, renameElementDialog.ElementName);
                         else
                             MessageBox.Show(
-                                $"L'élément '{selectedItem.Name}' n'existe pas.",
+                                $"L'élément '{selectedItem.Text}' n'existe pas.",
                                 "Erreur lors du renommage de l'élément",
                                 MessageBoxButtons.OK,
                                 MessageBoxIcon.Error);
@@ -357,6 +356,7 @@ namespace MiniExplorer.Controls
                             );
                     }
                 }
+                Display();
             }
         }
 

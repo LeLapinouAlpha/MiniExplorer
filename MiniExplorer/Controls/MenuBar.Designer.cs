@@ -61,6 +61,7 @@
             aideToolStripMenuItem = new ToolStripMenuItem();
             àproposdeToolStripMenuItem = new ToolStripMenuItem();
             folderBrowserDialog = new FolderBrowserDialog();
+            renommerToolStripMenuItem = new ToolStripMenuItem();
             menuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -86,7 +87,7 @@
             nouvelleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dossierToolStripMenuItem, fichierToolStripMenuItem1 });
             nouvelleToolStripMenuItem.Image = (Image)resources.GetObject("nouvelleToolStripMenuItem.Image");
             nouvelleToolStripMenuItem.Name = "nouvelleToolStripMenuItem";
-            nouvelleToolStripMenuItem.Size = new Size(153, 22);
+            nouvelleToolStripMenuItem.Size = new Size(180, 22);
             nouvelleToolStripMenuItem.Text = "&Nouveau";
             // 
             // dossierToolStripMenuItem
@@ -132,7 +133,7 @@
             // 
             // modifierToolStripMenuItem
             // 
-            modifierToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { annulerToolStripMenuItem, rétablirToolStripMenuItem, toolStripSeparator3, couperToolStripMenuItem, copierToolStripMenuItem, collerToolStripMenuItem, toolStripSeparator4, sélectionnertoutToolStripMenuItem, inverserLaSéléctionToolStripMenuItem, toolStripSeparator1, supprimerToolStripMenuItem });
+            modifierToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { annulerToolStripMenuItem, rétablirToolStripMenuItem, toolStripSeparator3, couperToolStripMenuItem, copierToolStripMenuItem, collerToolStripMenuItem, toolStripSeparator4, sélectionnertoutToolStripMenuItem, inverserLaSéléctionToolStripMenuItem, toolStripSeparator1, supprimerToolStripMenuItem, renommerToolStripMenuItem });
             modifierToolStripMenuItem.Name = "modifierToolStripMenuItem";
             modifierToolStripMenuItem.Size = new Size(64, 34);
             modifierToolStripMenuItem.Text = "&Modifier";
@@ -317,6 +318,14 @@
             // 
             folderBrowserDialog.ShowHiddenFiles = true;
             // 
+            // renommerToolStripMenuItem
+            // 
+            renommerToolStripMenuItem.Name = "renommerToolStripMenuItem";
+            renommerToolStripMenuItem.ShortcutKeys = Keys.F2;
+            renommerToolStripMenuItem.Size = new Size(406, 22);
+            renommerToolStripMenuItem.Text = "&Renommer";
+            renommerToolStripMenuItem.Click += renommerToolStripMenuItem_Click;
+            // 
             // MenuBar
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -364,5 +373,6 @@
         private ToolStripMenuItem inverserLaSéléctionToolStripMenuItem;
         private ToolStripSeparator toolStripSeparator1;
         private ToolStripMenuItem supprimerToolStripMenuItem;
+        private ToolStripMenuItem renommerToolStripMenuItem;
     }
 }

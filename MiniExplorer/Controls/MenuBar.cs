@@ -200,5 +200,10 @@ namespace MiniExplorer.Controls
         {
             this.DirectoryContent?.CutSelectedElements();
         }
+
+        private void renommerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.DirectoryContent?.RenameFirstSelectedElement();
+        }
     }
 }
