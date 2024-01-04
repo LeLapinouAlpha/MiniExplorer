@@ -53,7 +53,7 @@ namespace MiniExplorer.Controls
             get => dirInfo.FullName;
             set
             {
-                string path = value == null || value.Length == 0 ? Environment.GetLogicalDrives()[0] : value;
+                string path = string.IsNullOrEmpty(value) ? Environment.GetLogicalDrives()[0] : value;
                 dirInfo = new DirectoryInfo(path);
                 Display();
                 DirectoryChanged?.Invoke(this, EventArgs.Empty);
@@ -100,19 +100,19 @@ namespace MiniExplorer.Controls
                 {
                     foreach (var info in dirInfo.GetDirectories())
                         if (info.Name[0] != '.')
-                            AddRow(info.Name, 0, "Dossier", "-", info.LastWriteTime.ToString());
+                            AddRow(info.Name, 0, "Dossier", "-", info.LastWriteTime.ToString(), info.CreationTime.ToString());
 
                     foreach (var info in dirInfo.GetFiles())
                         if (info.Name[0] != '.')
-                            AddRow(info.Name, Utils.File.GetImageIndex(info.Extension), Utils.File.GetFileType(info.Extension), Utils.File.SizeToString(info.Length), info.LastWriteTime.ToString());
+                            AddRow(info.Name, Utils.File.GetImageIndex(info.Extension), Utils.File.GetFileType(info.Extension), Utils.File.SizeToString(info.Length), info.LastWriteTime.ToString(), info.CreationTime.ToString());
                 }
                 else
                 {
                     foreach (var info in dirInfo.GetDirectories())
-                        AddRow(info.Name, 0, "Dossier", "-", info.LastWriteTime.ToString());
+                        AddRow(info.Name, 0, "Dossier", "-", info.LastWriteTime.ToString(), info.LastWriteTime.ToString());
 
                     foreach (var info in dirInfo.GetFiles())
-                        AddRow(info.Name, Utils.File.GetImageIndex(info.Extension), Utils.File.GetFileType(info.Extension), Utils.File.SizeToString(info.Length), info.LastWriteTime.ToString());
+                        AddRow(info.Name, Utils.File.GetImageIndex(info.Extension), Utils.File.GetFileType(info.Extension), Utils.File.SizeToString(info.Length), info.LastWriteTime.ToString(), info.CreationTime.ToString());
                 }
 
             }

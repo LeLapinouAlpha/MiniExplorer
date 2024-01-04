@@ -37,17 +37,18 @@
             updatedAtColumn = new ColumnHeader();
             largeIcons = new ImageList(components);
             smallIcons = new ImageList(components);
+            createdAtColumn = new ColumnHeader();
             SuspendLayout();
             // 
             // view
             // 
-            view.Columns.AddRange(new ColumnHeader[] { nameColumn, typeColumn, sizeColumn, updatedAtColumn });
+            view.Columns.AddRange(new ColumnHeader[] { nameColumn, typeColumn, sizeColumn, updatedAtColumn, createdAtColumn });
             view.Dock = DockStyle.Fill;
             view.FullRowSelect = true;
             view.LargeImageList = largeIcons;
             view.Location = new Point(0, 0);
             view.Name = "view";
-            view.Size = new Size(831, 208);
+            view.Size = new Size(1002, 208);
             view.SmallImageList = smallIcons;
             view.StateImageList = smallIcons;
             view.TabIndex = 0;
@@ -178,13 +179,18 @@
             smallIcons.Images.SetKeyName(43, "fichier-xml.png");
             smallIcons.Images.SetKeyName(44, "fichier-zip.png");
             // 
+            // createdAtColumn
+            // 
+            createdAtColumn.Text = "Créer le";
+            createdAtColumn.Width = 128;
+            // 
             // DirectoryContent
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(view);
             Name = "DirectoryContent";
-            Size = new Size(831, 208);
+            Size = new Size(1002, 208);
             ResumeLayout(false);
         }
 
@@ -197,5 +203,6 @@
         private ColumnHeader typeColumn;
         private ColumnHeader updatedAtColumn;
         private ImageList largeIcons;
+        private ColumnHeader createdAtColumn;
     }
 }
