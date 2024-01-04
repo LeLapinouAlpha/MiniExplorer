@@ -195,5 +195,10 @@ namespace MiniExplorer.Controls
         {
             this.DirectoryContent?.PasteClipboardElements();
         }
+
+        private void couperToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.DirectoryContent?.CutSelectedElements();
+        }
     }
 }

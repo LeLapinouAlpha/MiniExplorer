@@ -165,6 +165,7 @@
             couperToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.X;
             couperToolStripMenuItem.Size = new Size(406, 22);
             couperToolStripMenuItem.Text = "&Couper";
+            couperToolStripMenuItem.Click += couperToolStripMenuItem_Click;
             // 
             // copierToolStripMenuItem
             // 
