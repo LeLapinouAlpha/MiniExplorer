@@ -173,7 +173,7 @@ namespace MiniExplorer.Controls
 
         private void actualiserToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.DirectoryContent?.Reload();
+            this.DirectoryContent?.Display();
         }
 
         private void inverserLaSéléctionToolStripMenuItem_Click(object sender, EventArgs e)

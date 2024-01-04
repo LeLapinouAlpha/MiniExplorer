@@ -89,7 +89,7 @@ namespace MiniExplorer.Controls
             this.view.Items.Add(item);
         }
 
-        private void Display()
+        public void Display()
         {
             this.view.Items.Clear();
             this.view.Items.Add(new ListViewItem("..", 0));
@@ -173,11 +173,6 @@ namespace MiniExplorer.Controls
                     MessageBoxButtons.OK,
                     MessageBoxIcon.Error);
             }
-        }
-
-        public void Reload()
-        {
-            Display();
         }
 
         public void RemoveSelectedElements()
