@@ -10,7 +10,6 @@ namespace MiniExplorer.Utils
 {
     public class ListViewItemComparer : IComparer
     {
-
         /*
          * **************************************************************************************
          * *                                 INSTANCE VARIABLES                                 *
