@@ -15,6 +15,24 @@ namespace MiniExplorer.Controls
 {
     public partial class DirectoryContent : UserControl
     {
+
+        /*
+         * **************************************************************************************
+         * *                                  NESTED CLASSES                                    *
+         * **************************************************************************************
+        */
+        private enum FileOperation
+        {
+            Copy,
+            Cut
+        }
+
+        private class ClipboardData
+        {
+            public StringCollection Paths { get; set; }
+            public FileOperation Operation { get; set; }
+        }
+
         /*
          * **************************************************************************************
          * *                                 INSTANCE VARIABLES                                 *
@@ -22,6 +40,7 @@ namespace MiniExplorer.Controls
          */
         private DirectoryInfo dirInfo;
         private bool showHiddenFiles;
+        private ClipboardData clipboardData = new ClipboardData();
 
 
         /*
@@ -241,40 +260,49 @@ namespace MiniExplorer.Controls
             Clipboard.SetFileDropList(copiedPaths);
         }
 
-        public void PasteElements()
+        public void CutSelectedElements()
         {
-            foreach (string? sourcePath in Clipboard.GetFileDropList())
+            clipboardData.Paths = new StringCollection();
+            foreach (ListViewItem item in this.view.SelectedItems)
+                clipboardData.Paths.Add(Path.Combine(DirPath, item.Text));
+            clipboardData.Operation = FileOperation.Cut;
+        }
+
+        public void PasteClipboardElements()
+        {
+            if (clipboardData.Paths == null || clipboardData.Paths.Count == 0)
+                return;
+
+            foreach (string? sourcePath in clipboardData.Paths)
             {
-                if (sourcePath == null)
+                string? fileName = Path.GetFileName(sourcePath);
+                if (fileName == null)
                     continue;
 
+                string destPath = Path.Combine(DirPath, fileName);
                 try
                 {
-                    string fileName = Path.GetFileName(sourcePath);
-                    string destPath = Path.Combine(DirPath, fileName);
-
-                    if (sourcePath == destPath)
-                        MessageBox.Show(
-                            "Les chemins de départs et d'arrivés sont identiques.",
-                            "Erreur lors de la copie",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Warning);
-                    else if (File.Exists(sourcePath))
-                        File.Copy(sourcePath, destPath, false);
-                    else if (Directory.Exists(sourcePath))
-                        CopyDirectory(sourcePath, destPath);
-                    else
-                        MessageBox.Show(
-                            $"Impossible de coller l'élément '{sourcePath}'.",
-                            "Erreur lors de la copie",
-                            MessageBoxButtons.OK,
-                            MessageBoxIcon.Error);
+                    if (File.Exists(sourcePath) || Directory.Exists(sourcePath))
+                    {
+                        if (clipboardData.Operation == FileOperation.Cut)
+                            FileSystem.MoveFile(sourcePath, destPath, UIOption.AllDialogs);
+                        else
+                        {
+                            if (File.Exists(sourcePath))
+                                File.Copy(sourcePath, destPath, true);
+                            else if (Directory.Exists(sourcePath))
+                                CopyDirectory(sourcePath, destPath);
+                        }
+                    }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show(ex.Message, "Erreur lors de la copie", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(ex.Message, "Erreur lors du collage", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+
+            if (clipboardData.Operation == FileOperation.Cut)
+                clipboardData.Paths.Clear(); // Effacer les chemins après un déplacement
 
             Display();
         }

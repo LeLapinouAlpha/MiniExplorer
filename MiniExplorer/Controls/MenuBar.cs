@@ -193,7 +193,7 @@ namespace MiniExplorer.Controls
 
         private void collerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.DirectoryContent?.PasteElements();
+            this.DirectoryContent?.PasteClipboardElements();
         }
     }
 }
