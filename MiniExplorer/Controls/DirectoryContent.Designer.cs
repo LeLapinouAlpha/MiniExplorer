@@ -35,9 +35,9 @@
             typeColumn = new ColumnHeader();
             sizeColumn = new ColumnHeader();
             updatedAtColumn = new ColumnHeader();
+            createdAtColumn = new ColumnHeader();
             largeIcons = new ImageList(components);
             smallIcons = new ImageList(components);
-            createdAtColumn = new ColumnHeader();
             SuspendLayout();
             // 
             // view
@@ -54,6 +54,7 @@
             view.TabIndex = 0;
             view.UseCompatibleStateImageBehavior = false;
             view.View = View.Details;
+            view.ColumnClick += view_ColumnClick;
             view.SelectedIndexChanged += view_SelectedIndexChanged;
             view.MouseDoubleClick += view_MouseDoubleClick;
             // 
@@ -76,6 +77,11 @@
             // 
             updatedAtColumn.Text = "Modifié le";
             updatedAtColumn.Width = 128;
+            // 
+            // createdAtColumn
+            // 
+            createdAtColumn.Text = "Créer le";
+            createdAtColumn.Width = 128;
             // 
             // largeIcons
             // 
@@ -178,11 +184,6 @@
             smallIcons.Images.SetKeyName(42, "fichier-xls.png");
             smallIcons.Images.SetKeyName(43, "fichier-xml.png");
             smallIcons.Images.SetKeyName(44, "fichier-zip.png");
-            // 
-            // createdAtColumn
-            // 
-            createdAtColumn.Text = "Créer le";
-            createdAtColumn.Width = 128;
             // 
             // DirectoryContent
             // 

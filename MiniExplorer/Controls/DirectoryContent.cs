@@ -10,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace MiniExplorer.Controls
 {
@@ -79,7 +80,6 @@ namespace MiniExplorer.Controls
                 DirectoryChanged?.Invoke(this, EventArgs.Empty);
             }
         }
-
         public int ElementCount { get => this.view.Items.Count; }
 
         public int SelectedElementCount { get => this.view.SelectedItems.Count; }
@@ -302,7 +302,7 @@ namespace MiniExplorer.Controls
             }
 
             if (clipboardData.Operation == FileOperation.Cut)
-                clipboardData.Paths.Clear(); // Effacer les chemins après un déplacement
+                clipboardData.Paths.Clear();
 
             Display();
         }
@@ -342,6 +342,25 @@ namespace MiniExplorer.Controls
         private void view_SelectedIndexChanged(object sender, EventArgs e)
         {
             SelectionChanged?.Invoke(sender, e);
+        }
+
+        private void view_ColumnClick(object sender, ColumnClickEventArgs e)
+        {
+            switch (this.view.Sorting)
+            {
+                case SortOrder.None:
+                    this.view.Sorting = SortOrder.Ascending;
+                    break;
+                case SortOrder.Ascending:
+                    this.view.Sorting = SortOrder.Descending;
+                    break;
+                case SortOrder.Descending:
+                    this.view.Sorting = SortOrder.Ascending;
+                    break;
+            }
+
+            this.view.ListViewItemSorter = new Utils.ListViewItemComparer(e.Column, this.view.Sorting);
+            this.view.Sort();
         }
     }
 }
