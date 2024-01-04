@@ -321,6 +321,45 @@ namespace MiniExplorer.Controls
                 CopyDirectory(dirInfo.FullName, Path.Combine(destinationDir, dirInfo.Name));
         }
 
+        public void RenameFirstSelectedElement()
+        {
+            if (this.view.SelectedItems.Count > 0)
+            {
+                var selectedItem = this.view.SelectedItems[0];
+                var renameElementDialog = new Forms.ElementModificationDialog(Forms.ElementModificationDialog.ModificationType.RENAME);
+                if (renameElementDialog.ShowDialog() == DialogResult.OK)
+                {
+                    if (renameElementDialog.ElementName == selectedItem.Name)
+                        return;
+
+                    string path = Path.Combine(DirPath, selectedItem.Name);
+                    string newPath = Path.Combine(DirPath, renameElementDialog.ElementName);
+                    try
+                    {
+                        if (File.Exists(path))
+                            FileSystem.RenameFile(path, newPath);
+                        else if (Directory.Exists(path))
+                            FileSystem.RenameDirectory(path, newPath);
+                        else
+                            MessageBox.Show(
+                                $"L'élément '{selectedItem.Name}' n'existe pas.",
+                                "Erreur lors du renommage de l'élément",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.Error);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(
+                            ex.Message,
+                            "Erreur lors du renommage de l'élément",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error
+                            );
+                    }
+                }
+            }
+        }
+
         /*
          * **************************************************************************************
          * *                                       EVENTS                                       *
