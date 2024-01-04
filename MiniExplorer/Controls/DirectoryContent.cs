@@ -61,6 +61,7 @@ namespace MiniExplorer.Controls
         }
 
         public int ElementCount { get => this.view.Items.Count; }
+
         public int SelectedElementCount { get => this.view.SelectedItems.Count; }
 
         public View View { get => this.view.View; set => this.view.View = value; }
@@ -245,10 +246,23 @@ namespace MiniExplorer.Controls
                 {
                     string fileName = Path.GetFileName(sourcePath);
                     string destPath = Path.Combine(DirPath, fileName);
-                    if (File.Exists(sourcePath))
-                        File.Copy(sourcePath, destPath, true);
+
+                    if (sourcePath == destPath)
+                        MessageBox.Show(
+                            "Les chemins de départs et d'arrivés sont identiques.",
+                            "Erreur lors de la copie",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                    else if (File.Exists(sourcePath))
+                        File.Copy(sourcePath, destPath, false);
                     else if (Directory.Exists(sourcePath))
                         CopyDirectory(sourcePath, destPath);
+                    else
+                        MessageBox.Show(
+                            $"Impossible de coller l'élément '{sourcePath}'.",
+                            "Erreur lors de la copie",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Error);
                 }
                 catch (Exception ex)
                 {
@@ -261,24 +275,17 @@ namespace MiniExplorer.Controls
 
         private void CopyDirectory(string sourceDir, string destinationDir)
         {
-            var dirInfo = new DirectoryInfo(sourceDir);
+            var sourceDirInfo = new DirectoryInfo(sourceDir);
 
-            if (!dirInfo.Exists)
+            if (!sourceDirInfo.Exists)
                 throw new DirectoryNotFoundException($"Le dossier source n'existe pas: {sourceDir}");
 
             Directory.CreateDirectory(destinationDir);
-            foreach (FileInfo file in dirInfo.GetFiles())
-            {
-                string tempPath = Path.Combine(destinationDir, file.Name);
-                file.CopyTo(tempPath, false);
-            }
-            foreach (DirectoryInfo subdir in dirInfo.GetDirectories())
-            {
-                string tempPath = Path.Combine(destinationDir, subdir.Name);
-                CopyDirectory(subdir.FullName, tempPath);
-            }
+            foreach (var fileInfo in sourceDirInfo.GetFiles())
+                fileInfo.CopyTo(Path.Combine(destinationDir, fileInfo.Name), false);
+            foreach (var dirInfo in sourceDirInfo.GetDirectories())
+                CopyDirectory(dirInfo.FullName, Path.Combine(destinationDir, dirInfo.Name));
         }
-
 
         /*
          * **************************************************************************************

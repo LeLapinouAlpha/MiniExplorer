@@ -185,5 +185,15 @@ namespace MiniExplorer.Controls
         {
             this.DirectoryContent?.RemoveSelectedElements();
         }
+
+        private void copierToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.DirectoryContent?.CopySelectedElements();
+        }
+
+        private void collerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.DirectoryContent?.PasteElements();
+        }
     }
 }

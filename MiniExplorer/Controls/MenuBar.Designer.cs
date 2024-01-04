@@ -47,6 +47,8 @@
             toolStripSeparator4 = new ToolStripSeparator();
             sélectionnertoutToolStripMenuItem = new ToolStripMenuItem();
             inverserLaSéléctionToolStripMenuItem = new ToolStripMenuItem();
+            toolStripSeparator1 = new ToolStripSeparator();
+            supprimerToolStripMenuItem = new ToolStripMenuItem();
             affichageToolStripMenuItem = new ToolStripMenuItem();
             dispositionToolStripMenuItem = new ToolStripMenuItem();
             détailsToolStripMenuItem = new ToolStripMenuItem();
@@ -59,8 +61,6 @@
             aideToolStripMenuItem = new ToolStripMenuItem();
             àproposdeToolStripMenuItem = new ToolStripMenuItem();
             folderBrowserDialog = new FolderBrowserDialog();
-            toolStripSeparator1 = new ToolStripSeparator();
-            supprimerToolStripMenuItem = new ToolStripMenuItem();
             menuStrip.SuspendLayout();
             SuspendLayout();
             // 
@@ -142,7 +142,7 @@
             annulerToolStripMenuItem.Image = Properties.Resources.annuler;
             annulerToolStripMenuItem.Name = "annulerToolStripMenuItem";
             annulerToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Z;
-            annulerToolStripMenuItem.Size = new Size(281, 22);
+            annulerToolStripMenuItem.Size = new Size(327, 22);
             annulerToolStripMenuItem.Text = "&Annuler";
             // 
             // rétablirToolStripMenuItem
@@ -150,20 +150,20 @@
             rétablirToolStripMenuItem.Image = Properties.Resources.refaire;
             rétablirToolStripMenuItem.Name = "rétablirToolStripMenuItem";
             rétablirToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Y;
-            rétablirToolStripMenuItem.Size = new Size(281, 22);
+            rétablirToolStripMenuItem.Size = new Size(327, 22);
             rétablirToolStripMenuItem.Text = "&Rétablir";
             // 
             // toolStripSeparator3
             // 
             toolStripSeparator3.Name = "toolStripSeparator3";
-            toolStripSeparator3.Size = new Size(278, 6);
+            toolStripSeparator3.Size = new Size(324, 6);
             // 
             // couperToolStripMenuItem
             // 
             couperToolStripMenuItem.Image = (Image)resources.GetObject("couperToolStripMenuItem.Image");
             couperToolStripMenuItem.Name = "couperToolStripMenuItem";
             couperToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.X;
-            couperToolStripMenuItem.Size = new Size(281, 22);
+            couperToolStripMenuItem.Size = new Size(327, 22);
             couperToolStripMenuItem.Text = "&Couper";
             // 
             // copierToolStripMenuItem
@@ -171,28 +171,30 @@
             copierToolStripMenuItem.Image = (Image)resources.GetObject("copierToolStripMenuItem.Image");
             copierToolStripMenuItem.Name = "copierToolStripMenuItem";
             copierToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.C;
-            copierToolStripMenuItem.Size = new Size(281, 22);
+            copierToolStripMenuItem.Size = new Size(327, 22);
             copierToolStripMenuItem.Text = "&Copier";
+            copierToolStripMenuItem.Click += copierToolStripMenuItem_Click;
             // 
             // collerToolStripMenuItem
             // 
             collerToolStripMenuItem.Image = (Image)resources.GetObject("collerToolStripMenuItem.Image");
             collerToolStripMenuItem.Name = "collerToolStripMenuItem";
             collerToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.V;
-            collerToolStripMenuItem.Size = new Size(281, 22);
+            collerToolStripMenuItem.Size = new Size(327, 22);
             collerToolStripMenuItem.Text = "&Coller";
+            collerToolStripMenuItem.Click += collerToolStripMenuItem_Click;
             // 
             // toolStripSeparator4
             // 
             toolStripSeparator4.Name = "toolStripSeparator4";
-            toolStripSeparator4.Size = new Size(278, 6);
+            toolStripSeparator4.Size = new Size(324, 6);
             // 
             // sélectionnertoutToolStripMenuItem
             // 
             sélectionnertoutToolStripMenuItem.Image = Properties.Resources.selectionner;
             sélectionnertoutToolStripMenuItem.Name = "sélectionnertoutToolStripMenuItem";
             sélectionnertoutToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.A;
-            sélectionnertoutToolStripMenuItem.Size = new Size(281, 22);
+            sélectionnertoutToolStripMenuItem.Size = new Size(327, 22);
             sélectionnertoutToolStripMenuItem.Text = "&Sélectionner tout";
             sélectionnertoutToolStripMenuItem.Click += sélectionnertoutToolStripMenuItem_Click;
             // 
@@ -201,9 +203,23 @@
             inverserLaSéléctionToolStripMenuItem.Image = Properties.Resources.reverse_selection;
             inverserLaSéléctionToolStripMenuItem.Name = "inverserLaSéléctionToolStripMenuItem";
             inverserLaSéléctionToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Shift | Keys.A;
-            inverserLaSéléctionToolStripMenuItem.Size = new Size(281, 22);
+            inverserLaSéléctionToolStripMenuItem.Size = new Size(327, 22);
             inverserLaSéléctionToolStripMenuItem.Text = "Inverser la séléction";
             inverserLaSéléctionToolStripMenuItem.Click += inverserLaSéléctionToolStripMenuItem_Click;
+            // 
+            // toolStripSeparator1
+            // 
+            toolStripSeparator1.Name = "toolStripSeparator1";
+            toolStripSeparator1.Size = new Size(324, 6);
+            // 
+            // supprimerToolStripMenuItem
+            // 
+            supprimerToolStripMenuItem.Image = Properties.Resources.bouton_supprimer;
+            supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
+            supprimerToolStripMenuItem.ShortcutKeys = Keys.Delete;
+            supprimerToolStripMenuItem.Size = new Size(327, 22);
+            supprimerToolStripMenuItem.Text = "Supprimer les éléments séléctionnés";
+            supprimerToolStripMenuItem.Click += supprimerToolStripMenuItem_Click;
             // 
             // affichageToolStripMenuItem
             // 
@@ -299,20 +315,6 @@
             // folderBrowserDialog
             // 
             folderBrowserDialog.ShowHiddenFiles = true;
-            // 
-            // toolStripSeparator1
-            // 
-            toolStripSeparator1.Name = "toolStripSeparator1";
-            toolStripSeparator1.Size = new Size(278, 6);
-            // 
-            // supprimerToolStripMenuItem
-            // 
-            supprimerToolStripMenuItem.Image = Properties.Resources.bouton_supprimer;
-            supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
-            supprimerToolStripMenuItem.ShortcutKeys = Keys.Delete;
-            supprimerToolStripMenuItem.Size = new Size(327, 22);
-            supprimerToolStripMenuItem.Text = "Supprimer les éléments séléctionnés";
-            supprimerToolStripMenuItem.Click += supprimerToolStripMenuItem_Click;
             // 
             // MenuBar
             // 
