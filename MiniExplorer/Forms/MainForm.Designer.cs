@@ -78,6 +78,7 @@
             // 
             // toolBar
             // 
+            toolBar.DirectoryContent = directoryContent;
             toolBar.Dock = DockStyle.Top;
             toolBar.Location = new Point(0, 32);
             toolBar.Name = "toolBar";

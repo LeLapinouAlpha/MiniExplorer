@@ -52,18 +52,12 @@ namespace MiniExplorer.Controls
             set => this.navigationBarTextBox.Text = value;
         }
 
-        private void navigationBarTextBox_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-                PathValidated?.Invoke(this, EventArgs.Empty);
-        }
-
-
         /*
          * **************************************************************************************
          * *                                       METHODS                                      *
          * **************************************************************************************
         */
+        public DirectoryContent? DirectoryContent { get; set; } = null;
 
 
         /*
@@ -71,5 +65,15 @@ namespace MiniExplorer.Controls
          * *                                       EVENTS                                       *
          * **************************************************************************************
          */
+        private void navigationBarTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                PathValidated?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void parentButton_Click(object sender, EventArgs e)
+        {
+            this.DirectoryContent?.MoveToParentDirectory();
+        }
     }
 }

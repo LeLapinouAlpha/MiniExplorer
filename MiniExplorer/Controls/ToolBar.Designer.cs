@@ -78,6 +78,7 @@
             parentButton.Name = "parentButton";
             parentButton.Size = new Size(23, 28);
             parentButton.ToolTipText = "Dossier parent";
+            parentButton.Click += parentButton_Click;
             // 
             // toolStripSeparator1
             // 
