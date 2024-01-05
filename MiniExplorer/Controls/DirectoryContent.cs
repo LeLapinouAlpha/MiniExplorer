@@ -355,6 +355,13 @@ namespace MiniExplorer.Controls
                 Display();
         }
 
+        public void MoveToParentDirectory()
+        {
+            var parentInfo = dirInfo.Parent;
+            if (parentInfo != null)
+                DirPath = parentInfo.FullName;
+        }
+
         /*
          * **************************************************************************************
          * *                                       EVENTS                                       *
