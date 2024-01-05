@@ -49,7 +49,7 @@
             toolStrip.Items.AddRange(new ToolStripItem[] { previousButton, nextButton, parentButton, toolStripSeparator1, navigationBarTextBox, reloadButton, toolStripSeparator2, searchBarTextBox, searchButton });
             toolStrip.Location = new Point(0, 0);
             toolStrip.Name = "toolStrip";
-            toolStrip.Size = new Size(760, 31);
+            toolStrip.Size = new Size(893, 31);
             toolStrip.TabIndex = 0;
             toolStrip.Text = "toolStrip1";
             // 
@@ -109,7 +109,8 @@
             // 
             searchBarTextBox.BorderStyle = BorderStyle.FixedSingle;
             searchBarTextBox.Name = "searchBarTextBox";
-            searchBarTextBox.Size = new Size(100, 31);
+            searchBarTextBox.Size = new Size(250, 31);
+            searchBarTextBox.ToolTipText = "Contenu de la recherche";
             // 
             // searchButton
             // 
@@ -117,7 +118,7 @@
             searchButton.Image = (Image)resources.GetObject("searchButton.Image");
             searchButton.ImageTransparentColor = Color.Magenta;
             searchButton.Name = "searchButton";
-            searchButton.Size = new Size(23, 28);
+            searchButton.Size = new Size(23, 20);
             searchButton.ToolTipText = "Rechercher";
             // 
             // ToolBar
@@ -126,7 +127,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(toolStrip);
             Name = "ToolBar";
-            Size = new Size(760, 31);
+            Size = new Size(893, 31);
             toolStrip.ResumeLayout(false);
             toolStrip.PerformLayout();
             ResumeLayout(false);
