@@ -90,6 +90,7 @@
             navigationBarTextBox.Name = "navigationBarTextBox";
             navigationBarTextBox.Size = new Size(500, 31);
             navigationBarTextBox.ToolTipText = "Barre de navigation";
+            navigationBarTextBox.KeyDown += navigationBarTextBox_KeyDown;
             // 
             // reloadButton
             // 

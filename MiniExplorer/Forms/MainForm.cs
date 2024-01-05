@@ -55,7 +55,12 @@ namespace MiniExplorer.Forms
         {
             string filename = Path.GetFileName(this.directoryContent.DirPath);
             string path = filename == "" ? this.directoryContent.DirPath : filename;
-                this.Text = $"MiniExplorer - {path}";
+            this.Text = $"MiniExplorer - {path}";
+        }
+
+        private void SyncToolBar()
+        {
+            this.toolBar.Path = this.directoryContent.DirPath;
         }
 
         /*
@@ -72,12 +77,14 @@ namespace MiniExplorer.Forms
         {
             SyncStatusBar();
             SyncTitle();
+            SyncToolBar();
         }
 
         private void directoryContent_Load(object sender, EventArgs e)
         {
             SyncStatusBar();
             SyncTitle();
+            SyncToolBar();
         }
 
         private void directoryTree_SelectionChanged(object sender, EventArgs e)
@@ -88,6 +95,11 @@ namespace MiniExplorer.Forms
                 var dirInfo = (DirectoryInfo)nodeEventArgs.Node.Tag;
                 this.directoryContent.DirPath = dirInfo.FullName;
             }
+        }
+
+        private void toolBar_PathValidated(object sender, EventArgs e)
+        {
+            this.directoryContent.DirPath = this.toolBar.Path;
         }
     }
 }

@@ -29,6 +29,7 @@ namespace MiniExplorer.Controls
          * *                                  EVENTS HANDLER                                    *
          * **************************************************************************************
          */
+        public event EventHandler? PathValidated;
 
         /*
          * **************************************************************************************
@@ -45,6 +46,17 @@ namespace MiniExplorer.Controls
          * *                                    PROPERTIES                                      *
          * **************************************************************************************
         */
+        public string Path
+        {
+            get => this.navigationBarTextBox.Text;
+            set => this.navigationBarTextBox.Text = value;
+        }
+
+        private void navigationBarTextBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                PathValidated?.Invoke(this, EventArgs.Empty);
+        }
 
 
         /*

@@ -30,11 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             menuBar = new Controls.MenuBar();
+            directoryContent = new Controls.DirectoryContent();
+            directoryTree = new Controls.DirectoryTree();
             toolBar = new Controls.ToolBar();
             statusBar = new Controls.StatusBar();
             splitContainer = new SplitContainer();
-            directoryTree = new Controls.DirectoryTree();
-            directoryContent = new Controls.DirectoryContent();
             ((System.ComponentModel.ISupportInitialize)splitContainer).BeginInit();
             splitContainer.Panel1.SuspendLayout();
             splitContainer.Panel2.SuspendLayout();
@@ -51,13 +51,40 @@
             menuBar.Size = new Size(883, 32);
             menuBar.TabIndex = 0;
             // 
+            // directoryContent
+            // 
+            directoryContent.DirPath = "C:\\";
+            directoryContent.Dock = DockStyle.Fill;
+            directoryContent.Location = new Point(0, 0);
+            directoryContent.Name = "directoryContent";
+            directoryContent.ShowHiddenFiles = true;
+            directoryContent.Size = new Size(585, 399);
+            directoryContent.TabIndex = 0;
+            directoryContent.View = View.Details;
+            directoryContent.DirectoryChanged += directoryContent_DirectoryChanged;
+            directoryContent.SelectionChanged += directoryContent_FileSelectionChanged;
+            directoryContent.Load += directoryContent_Load;
+            // 
+            // directoryTree
+            // 
+            directoryTree.Dock = DockStyle.Fill;
+            directoryTree.Location = new Point(0, 0);
+            directoryTree.Name = "directoryTree";
+            directoryTree.RootDirPath = "C:\\";
+            directoryTree.ShowHiddenDirectories = true;
+            directoryTree.Size = new Size(294, 399);
+            directoryTree.TabIndex = 0;
+            directoryTree.SelectionChanged += directoryTree_SelectionChanged;
+            // 
             // toolBar
             // 
             toolBar.Dock = DockStyle.Top;
             toolBar.Location = new Point(0, 32);
             toolBar.Name = "toolBar";
+            toolBar.Path = "";
             toolBar.Size = new Size(883, 31);
             toolBar.TabIndex = 1;
+            toolBar.PathValidated += toolBar_PathValidated;
             // 
             // statusBar
             // 
@@ -85,28 +112,6 @@
             splitContainer.Size = new Size(883, 399);
             splitContainer.SplitterDistance = 294;
             splitContainer.TabIndex = 3;
-            // 
-            // directoryTree
-            // 
-            directoryTree.Dock = DockStyle.Fill;
-            directoryTree.Location = new Point(0, 0);
-            directoryTree.Name = "directoryTree";
-            directoryTree.RootDirPath = "C:\\";
-            directoryTree.ShowHiddenDirectories = true;
-            directoryTree.Size = new Size(294, 399);
-            directoryTree.TabIndex = 0;
-            directoryTree.SelectionChanged += directoryTree_SelectionChanged;
-            // 
-            // directoryContent
-            // 
-            directoryContent.DirPath = "C:\\";
-            directoryContent.Dock = DockStyle.Fill;
-            directoryContent.Location = new Point(0, 0);
-            directoryContent.Name = "directoryContent";
-            directoryContent.ShowHiddenFiles = true;
-            directoryContent.Size = new Size(585, 399);
-            directoryContent.TabIndex = 0;
-            directoryContent.View = View.Details;
             // 
             // MainForm
             // 
