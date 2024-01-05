@@ -89,6 +89,7 @@
             navigationBarTextBox.BorderStyle = BorderStyle.FixedSingle;
             navigationBarTextBox.Name = "navigationBarTextBox";
             navigationBarTextBox.Size = new Size(500, 31);
+            navigationBarTextBox.ToolTipText = "Barre de navigation";
             // 
             // reloadButton
             // 
@@ -117,7 +118,7 @@
             searchButton.Image = Properties.Resources.rechercher_small;
             searchButton.ImageTransparentColor = Color.Magenta;
             searchButton.Name = "searchButton";
-            searchButton.Size = new Size(23, 28);
+            searchButton.Size = new Size(23, 20);
             searchButton.ToolTipText = "Rechercher";
             // 
             // ToolBar

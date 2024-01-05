@@ -16,7 +16,6 @@ namespace MiniExplorer.Controls
 {
     public partial class DirectoryContent : UserControl
     {
-
         /*
          * **************************************************************************************
          * *                                  NESTED CLASSES                                    *
