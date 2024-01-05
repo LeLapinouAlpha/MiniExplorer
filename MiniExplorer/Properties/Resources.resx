@@ -117,4 +117,65 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="annuler-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\annuler-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rétablir-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\rétablir-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="coller-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\coller-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="dossier-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\dossier-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fichier-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\fichier-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="effacer-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\effacer-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="copier-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\copier-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="rafraîchir-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\rafraîchir-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="couper-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\couper-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cocher-tout-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\cocher-tout-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="quitter-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\quitter-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="mosaïque-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\mosaïque-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="plus-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\plus-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="grandes-icônes-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\grandes-icônes-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="inverser-selection" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\inverser-selection.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="petites-icônes-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\petites-icônes-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="ouvrir-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\ouvrir-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="liste-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\liste-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="détails-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\détails-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="renommer-small" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Icons\renommer-small.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

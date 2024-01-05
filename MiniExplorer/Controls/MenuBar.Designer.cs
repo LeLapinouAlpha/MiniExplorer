@@ -85,12 +85,14 @@
             // nouvelleToolStripMenuItem
             // 
             nouvelleToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { dossierToolStripMenuItem, fichierToolStripMenuItem1 });
+            nouvelleToolStripMenuItem.Image = Properties.Resources.plus_small;
             nouvelleToolStripMenuItem.Name = "nouvelleToolStripMenuItem";
             nouvelleToolStripMenuItem.Size = new Size(153, 22);
             nouvelleToolStripMenuItem.Text = "&Nouveau";
             // 
             // dossierToolStripMenuItem
             // 
+            dossierToolStripMenuItem.Image = Properties.Resources.dossier_small;
             dossierToolStripMenuItem.Name = "dossierToolStripMenuItem";
             dossierToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.N;
             dossierToolStripMenuItem.Size = new Size(214, 22);
@@ -99,6 +101,7 @@
             // 
             // fichierToolStripMenuItem1
             // 
+            fichierToolStripMenuItem1.Image = Properties.Resources.fichier_small;
             fichierToolStripMenuItem1.Name = "fichierToolStripMenuItem1";
             fichierToolStripMenuItem1.ShortcutKeys = Keys.Control | Keys.Shift | Keys.N;
             fichierToolStripMenuItem1.Size = new Size(214, 22);
@@ -107,6 +110,7 @@
             // 
             // ouvrirToolStripMenuItem
             // 
+            ouvrirToolStripMenuItem.Image = Properties.Resources.ouvrir_small;
             ouvrirToolStripMenuItem.Name = "ouvrirToolStripMenuItem";
             ouvrirToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.O;
             ouvrirToolStripMenuItem.Size = new Size(153, 22);
@@ -120,6 +124,7 @@
             // 
             // quitterToolStripMenuItem
             // 
+            quitterToolStripMenuItem.Image = Properties.Resources.quitter_small;
             quitterToolStripMenuItem.Name = "quitterToolStripMenuItem";
             quitterToolStripMenuItem.ShortcutKeys = Keys.Alt | Keys.F4;
             quitterToolStripMenuItem.Size = new Size(153, 22);
@@ -135,6 +140,7 @@
             // 
             // annulerToolStripMenuItem
             // 
+            annulerToolStripMenuItem.Image = Properties.Resources.annuler_small;
             annulerToolStripMenuItem.Name = "annulerToolStripMenuItem";
             annulerToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Z;
             annulerToolStripMenuItem.Size = new Size(406, 22);
@@ -142,6 +148,7 @@
             // 
             // rétablirToolStripMenuItem
             // 
+            rétablirToolStripMenuItem.Image = Properties.Resources.rétablir_small;
             rétablirToolStripMenuItem.Name = "rétablirToolStripMenuItem";
             rétablirToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Y;
             rétablirToolStripMenuItem.Size = new Size(406, 22);
@@ -154,6 +161,7 @@
             // 
             // couperToolStripMenuItem
             // 
+            couperToolStripMenuItem.Image = Properties.Resources.couper_small;
             couperToolStripMenuItem.Name = "couperToolStripMenuItem";
             couperToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.X;
             couperToolStripMenuItem.Size = new Size(406, 22);
@@ -162,6 +170,7 @@
             // 
             // copierToolStripMenuItem
             // 
+            copierToolStripMenuItem.Image = Properties.Resources.copier_small;
             copierToolStripMenuItem.Name = "copierToolStripMenuItem";
             copierToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.C;
             copierToolStripMenuItem.Size = new Size(406, 22);
@@ -170,6 +179,7 @@
             // 
             // collerToolStripMenuItem
             // 
+            collerToolStripMenuItem.Image = Properties.Resources.coller_small;
             collerToolStripMenuItem.Name = "collerToolStripMenuItem";
             collerToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.V;
             collerToolStripMenuItem.Size = new Size(406, 22);
@@ -183,6 +193,7 @@
             // 
             // sélectionnertoutToolStripMenuItem
             // 
+            sélectionnertoutToolStripMenuItem.Image = Properties.Resources.cocher_tout_small;
             sélectionnertoutToolStripMenuItem.Name = "sélectionnertoutToolStripMenuItem";
             sélectionnertoutToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.A;
             sélectionnertoutToolStripMenuItem.Size = new Size(406, 22);
@@ -191,6 +202,7 @@
             // 
             // inverserLaSéléctionToolStripMenuItem
             // 
+            inverserLaSéléctionToolStripMenuItem.Image = Properties.Resources.inverser_selection;
             inverserLaSéléctionToolStripMenuItem.Name = "inverserLaSéléctionToolStripMenuItem";
             inverserLaSéléctionToolStripMenuItem.ShortcutKeys = Keys.Control | Keys.Shift | Keys.A;
             inverserLaSéléctionToolStripMenuItem.Size = new Size(406, 22);
@@ -204,6 +216,7 @@
             // 
             // supprimerToolStripMenuItem
             // 
+            supprimerToolStripMenuItem.Image = Properties.Resources.effacer_small;
             supprimerToolStripMenuItem.Name = "supprimerToolStripMenuItem";
             supprimerToolStripMenuItem.ShortcutKeys = Keys.Delete;
             supprimerToolStripMenuItem.Size = new Size(406, 22);
@@ -212,6 +225,7 @@
             // 
             // renommerToolStripMenuItem
             // 
+            renommerToolStripMenuItem.Image = Properties.Resources.renommer_small;
             renommerToolStripMenuItem.Name = "renommerToolStripMenuItem";
             renommerToolStripMenuItem.ShortcutKeys = Keys.F2;
             renommerToolStripMenuItem.Size = new Size(406, 22);
@@ -237,37 +251,42 @@
             détailsToolStripMenuItem.Checked = true;
             détailsToolStripMenuItem.CheckOnClick = true;
             détailsToolStripMenuItem.CheckState = CheckState.Checked;
+            détailsToolStripMenuItem.Image = Properties.Resources.détails_small;
             détailsToolStripMenuItem.Name = "détailsToolStripMenuItem";
-            détailsToolStripMenuItem.Size = new Size(154, 22);
+            détailsToolStripMenuItem.Size = new Size(180, 22);
             détailsToolStripMenuItem.Text = "&Détails";
             détailsToolStripMenuItem.Click += détailsToolStripMenuItem_Click;
             // 
             // listeToolStripMenuItem
             // 
             listeToolStripMenuItem.CheckOnClick = true;
+            listeToolStripMenuItem.Image = Properties.Resources.liste_small;
             listeToolStripMenuItem.Name = "listeToolStripMenuItem";
-            listeToolStripMenuItem.Size = new Size(154, 22);
+            listeToolStripMenuItem.Size = new Size(180, 22);
             listeToolStripMenuItem.Text = "&Liste";
             listeToolStripMenuItem.Click += listeToolStripMenuItem_Click;
             // 
             // petitesIcônesToolStripMenuItem
             // 
+            petitesIcônesToolStripMenuItem.Image = Properties.Resources.petites_icônes_small;
             petitesIcônesToolStripMenuItem.Name = "petitesIcônesToolStripMenuItem";
-            petitesIcônesToolStripMenuItem.Size = new Size(154, 22);
+            petitesIcônesToolStripMenuItem.Size = new Size(180, 22);
             petitesIcônesToolStripMenuItem.Text = "&Petites icônes";
             petitesIcônesToolStripMenuItem.Click += petitesIcônesToolStripMenuItem_Click;
             // 
             // grandesIcônesToolStripMenuItem
             // 
+            grandesIcônesToolStripMenuItem.Image = Properties.Resources.grandes_icônes_small;
             grandesIcônesToolStripMenuItem.Name = "grandesIcônesToolStripMenuItem";
-            grandesIcônesToolStripMenuItem.Size = new Size(154, 22);
+            grandesIcônesToolStripMenuItem.Size = new Size(180, 22);
             grandesIcônesToolStripMenuItem.Text = "&Grandes icônes";
             grandesIcônesToolStripMenuItem.Click += grandesIcônesToolStripMenuItem_Click;
             // 
             // mosaïquesToolStripMenuItem
             // 
+            mosaïquesToolStripMenuItem.Image = Properties.Resources.mosaïque_small;
             mosaïquesToolStripMenuItem.Name = "mosaïquesToolStripMenuItem";
-            mosaïquesToolStripMenuItem.Size = new Size(154, 22);
+            mosaïquesToolStripMenuItem.Size = new Size(180, 22);
             mosaïquesToolStripMenuItem.Text = "&Mosaïques";
             mosaïquesToolStripMenuItem.Click += mosaïquesToolStripMenuItem_Click;
             // 
@@ -283,6 +302,7 @@
             // 
             // actualiserToolStripMenuItem
             // 
+            actualiserToolStripMenuItem.Image = Properties.Resources.rafraîchir_small;
             actualiserToolStripMenuItem.Name = "actualiserToolStripMenuItem";
             actualiserToolStripMenuItem.ShortcutKeys = Keys.F5;
             actualiserToolStripMenuItem.Size = new Size(213, 22);
