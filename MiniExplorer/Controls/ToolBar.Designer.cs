@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ToolBar));
             toolStrip = new ToolStrip();
             previousButton = new ToolStripButton();
             nextButton = new ToolStripButton();
@@ -56,7 +55,7 @@
             // previousButton
             // 
             previousButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            previousButton.Image = (Image)resources.GetObject("previousButton.Image");
+            previousButton.Image = Properties.Resources.précédent_small;
             previousButton.ImageTransparentColor = Color.Magenta;
             previousButton.Name = "previousButton";
             previousButton.Size = new Size(23, 28);
@@ -65,7 +64,7 @@
             // nextButton
             // 
             nextButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            nextButton.Image = (Image)resources.GetObject("nextButton.Image");
+            nextButton.Image = Properties.Resources.suivant_small;
             nextButton.ImageTransparentColor = Color.Magenta;
             nextButton.Name = "nextButton";
             nextButton.Size = new Size(23, 28);
@@ -74,7 +73,7 @@
             // parentButton
             // 
             parentButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            parentButton.Image = (Image)resources.GetObject("parentButton.Image");
+            parentButton.Image = Properties.Resources.dossier_parent;
             parentButton.ImageTransparentColor = Color.Magenta;
             parentButton.Name = "parentButton";
             parentButton.Size = new Size(23, 28);
@@ -94,7 +93,7 @@
             // reloadButton
             // 
             reloadButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            reloadButton.Image = (Image)resources.GetObject("reloadButton.Image");
+            reloadButton.Image = Properties.Resources.rafraîchir_small;
             reloadButton.ImageTransparentColor = Color.Magenta;
             reloadButton.Name = "reloadButton";
             reloadButton.Size = new Size(23, 28);
@@ -115,10 +114,10 @@
             // searchButton
             // 
             searchButton.DisplayStyle = ToolStripItemDisplayStyle.Image;
-            searchButton.Image = (Image)resources.GetObject("searchButton.Image");
+            searchButton.Image = Properties.Resources.rechercher_small;
             searchButton.ImageTransparentColor = Color.Magenta;
             searchButton.Name = "searchButton";
-            searchButton.Size = new Size(23, 20);
+            searchButton.Size = new Size(23, 28);
             searchButton.ToolTipText = "Rechercher";
             // 
             // ToolBar

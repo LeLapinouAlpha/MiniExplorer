@@ -123,6 +123,16 @@ namespace MiniExplorer.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap dossier_parent {
+            get {
+                object obj = ResourceManager.GetObject("dossier-parent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap dossier_small {
             get {
                 object obj = ResourceManager.GetObject("dossier-small", resourceCulture);
@@ -223,6 +233,16 @@ namespace MiniExplorer.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap précédent_small {
+            get {
+                object obj = ResourceManager.GetObject("précédent-small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap quitter_small {
             get {
                 object obj = ResourceManager.GetObject("quitter-small", resourceCulture);
@@ -243,6 +263,16 @@ namespace MiniExplorer.Properties {
         /// <summary>
         ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap rechercher_small {
+            get {
+                object obj = ResourceManager.GetObject("rechercher-small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap renommer_small {
             get {
                 object obj = ResourceManager.GetObject("renommer-small", resourceCulture);
@@ -256,6 +286,16 @@ namespace MiniExplorer.Properties {
         internal static System.Drawing.Bitmap rétablir_small {
             get {
                 object obj = ResourceManager.GetObject("rétablir-small", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap suivant_small {
+            get {
+                object obj = ResourceManager.GetObject("suivant-small", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
