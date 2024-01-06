@@ -52,12 +52,13 @@ namespace MiniExplorer.Controls
             set => this.navigationBarTextBox.Text = value;
         }
 
+        public DirectoryContent? DirectoryContent { get; set; } = null;
+
         /*
          * **************************************************************************************
          * *                                       METHODS                                      *
          * **************************************************************************************
         */
-        public DirectoryContent? DirectoryContent { get; set; } = null;
 
 
         /*
